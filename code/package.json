@@ -22,6 +22,7 @@
     "lodash": "^4.17.19",
     "react": "^16.12.0",
     "react-bootstrap": "^1.3.0",
+    "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",

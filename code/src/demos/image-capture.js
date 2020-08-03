@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 
 export default function ImageCaptureDemo() {
   const [track, setTrack] = useState();
   const [enableCapture, setEnableCapture] = useState(false);
+  const [error, setError] = useState();
 
   const getUserMedia = async () => {
     console.log('Getting User Media');
@@ -14,8 +16,14 @@ export default function ImageCaptureDemo() {
         setEnableCapture(true);
       })
       .catch(error => {
-        console.error(` not yet supported`);
+        console.error(` ${erroe} is not yet supported`);
+        setError(error);
       });
+  }
+
+  const videoOff = () => {
+    track.stop();
+    setEnableCapture(false);
   }
 
   const grabFrame = () => {
@@ -26,7 +34,10 @@ export default function ImageCaptureDemo() {
         const canvas = document.querySelector('#grabFrameCanvas');
         drawCanvas(canvas, imageBitmap);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        setError(error);
+      });
   }
 
   const takePhoto = () => {
@@ -37,7 +48,10 @@ export default function ImageCaptureDemo() {
         const canvas = document.querySelector('#takePhotoCanvas');
         drawCanvas(canvas, imageBitmap);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        setError(error);
+      });
   }
 
   function drawCanvas(canvas, img) {
@@ -60,17 +74,36 @@ export default function ImageCaptureDemo() {
     
   return (
     <>
+      {error && <div>This feature is not supported yet.</div>}
+      <div style={{padding: '5px'}}>
+        <Button 
+          variant="success"
+          id='getUserMediaButton' 
+          onClick={() => getUserMedia()}>Get User Media
+        </Button> {' '}
+        <Button 
+          variant="danger"
+          onClick={() => videoOff()}>Switch Off
+        </Button>{' '}
+        <Button 
+          variant="info"
+          id='grabFrameButton' 
+          onClick={() => grabFrame()} 
+          disabled={!enableCapture}>Grab Frame
+        </Button>{' '}
+        <Button 
+          variant="info"
+          id='takePhotoButton' 
+          onClick={() => takePhoto()} 
+          disabled={!enableCapture}>Take Photo
+        </Button>
+      </div>
       <div>
         <video style={{height:'198px', width:'100%', border:'2px solid'}} autoPlay></video>
-        <button id='getUserMediaButton' onClick={() => getUserMedia()}>Get User Media</button>
       </div>
       <div>
         <canvas id='grabFrameCanvas'></canvas>
-        <button id='grabFrameButton' onClick={() => grabFrame()} disabled={!enableCapture}>Grab Frame</button>
-      </div>
-      <div>
-        <canvas id='takePhotoCanvas'></canvas>
-        <button id='takePhotoButton' onClick={() => takePhoto()} disabled={!enableCapture}>Take Photo</button>
+        <canvas id='takePhotoCanvas'></canvas>    
       </div>
     </>
   )

@@ -20,11 +20,11 @@ export default function APIDemo({data}) {
     };
 
     useEffect(() => {
-        async function fetchMyAPI() {
+        async function fetchAPIDemo() {
             const fileName = data.markdownRemark.frontmatter.fileName;
             await addComponent(fileName);
         }
-        fetchMyAPI()
+        fetchAPIDemo();
     }, []);
 
     const getDescription = () => {
