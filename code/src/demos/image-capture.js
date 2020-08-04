@@ -16,7 +16,7 @@ export default function ImageCaptureDemo() {
         setEnableCapture(true);
       })
       .catch(error => {
-        console.error(` ${erroe} is not yet supported`);
+        console.error(` ${error} is not yet supported`);
         setError(error);
       });
   }

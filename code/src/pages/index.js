@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/layout";
-import Cards from "../components/cards";
+import Layout from "../components/layouts/layout";
+import Cards from "../components/features/cards";
 
 export default function Home() {
   return (

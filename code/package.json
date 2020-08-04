@@ -16,10 +16,12 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "gatsby": "^2.23.12",
+    "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-typography": "^2.5.10",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-remark": "^2.8.27",
     "lodash": "^4.17.19",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.3.0",
     "react-device-detect": "^1.13.1",

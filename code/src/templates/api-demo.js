@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 
 export default function APIDemo({data}) {
     const [demo, setDemo] = useState([]);

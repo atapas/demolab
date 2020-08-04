@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
     tagSet.forEach(tag => {
       createPage({
         path: `/tags/${_.kebabCase(tag)}/`,
-        component: path.resolve(`./src/templates/tagged-post.js`),
+        component: path.resolve(`./src/templates/tagged-tech.js`),
         context: { tag }
       });
     });
@@ -74,7 +74,7 @@ exports.createPages = async ({ graphql, actions }) => {
     categorySet.forEach(category => {
       createPage({
         path: `/categories/${_.kebabCase(category)}/`,
-        component: path.resolve(`./src/templates/category-post.js`),
+        component: path.resolve(`./src/templates/category-tech.js`),
         context: { category }
       });
     });

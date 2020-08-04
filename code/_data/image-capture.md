@@ -1,11 +1,12 @@
 ---
 title: "Image Capture API"
 date: "2020-08-02"
-category: "Multimedia"
+category: "Web API"
 tags:
   - "#image"
   - "#webcam"
   - "#stream"
+  - "#multi-media"
   - "#video"
 fileName: "image-capture"
 link: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
