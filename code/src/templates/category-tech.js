@@ -1,12 +1,13 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
 
+import FeatureList from '../components/features/featureList';
+
 const CategoryPost = ({ data }) => {
-    console.log(data);
     return (
         <Layout>
             <div>
-                Category List
+              <FeatureList data = { data.allMarkdownRemark }/>
             </div>
         </Layout>
     )

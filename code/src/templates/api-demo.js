@@ -43,19 +43,19 @@ export default function APIDemo({data}) {
             <div>
                 More reads from:
                     <ul>
-                        {
-                            (links && links.length > 0) &&
-                                links.map((link, index) => (
-                                    <li>
-                                        <a 
-                                            key = {index}
-                                            href={link}
-                                            target='_blank' 
-                                            rel="noreferrer">Here
-                                        </a> 
-                                    </li>
-                            ))
-                        }
+                    {
+                        (links && links.length > 0) &&
+                            links.map((link, index) => (
+                                <li>
+                                    <a 
+                                        key = {index}
+                                        href={link}
+                                        target='_blank' 
+                                        rel="noreferrer">Here
+                                    </a> 
+                                </li>
+                        ))
+                    }
                     </ul>
             </div>
             

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
-import FeatureList from "../components/features/featureList";
+import CategoryList from "../components/categories/categoryList";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         What do I like to do? Lots of course but definitely enjoy building
         websites.
       </p>
-      <FeatureList />
+      <CategoryList />
     </Layout>
   );
 }

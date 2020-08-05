@@ -3,7 +3,9 @@ import Card from "react-bootstrap/Card";
 import { Link } from 'gatsby';
 import Emoji from '../utils/emoji';
 
-export default function Feature() {
+export default function Feature(props) {
+  const data = props.data;
+
     return (
         <Card 
         bg="dark" 
@@ -11,13 +13,9 @@ export default function Feature() {
         style={{ width: '18rem' }}
         className="mb-2">
         <Card.Body>
-            <Card.Title><Emoji label="camera" symbol="📷"/> Image Capture API</Card.Title>
+            <Card.Title><Emoji label="camera" symbol="📷"/>{data.node.frontmatter.title}</Card.Title>
             <Card.Text>
-            The MediaStream Image Capture API is an API for capturing 
-            images or videos from a photographic device. In addition 
-            to capturing data, it also allows you to retrieve information 
-            about device capabilities such as image size, red-eye reduction 
-            and whether or not there is a flash and what they are currently set to. 
+              {data.node.excerpt} 
             </Card.Text>
             <Emoji label="Backhand Index Pointing Right" symbol="👉"/>
             <Link to="/image-capture">
@@ -26,7 +24,7 @@ export default function Feature() {
         </Card.Body>
         
         <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
+          <small className="text-muted">Last updated on {data.node.frontmatter.date}</small>
         </Card.Footer>
       </Card>
     )

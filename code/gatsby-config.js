@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Web API Demo`,
+    title: `GreenRoots Demo Pad`,
   },
   plugins: [
     {
