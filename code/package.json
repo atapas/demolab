@@ -27,6 +27,7 @@
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-typography": "^0.16.19",
+    "shortid": "^2.2.15",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },

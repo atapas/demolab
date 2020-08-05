@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import * as _ from "lodash";
+import shortid from "shortid";
 
 import Layout from "../components/layouts/layout";
+
+const importDemo = (demoFolder, file) =>
+  lazy(() =>
+    import(`../demos/${demoFolder}/${file}.js`)
+      .catch(() => console.log('Error in importing'))
+);
 
 export default function APIDemo({data}) {
     const links = data.markdownRemark.frontmatter.links;
     const title = data.markdownRemark.frontmatter.title;
     const category = data.markdownRemark.frontmatter.category;
+    const fileName = data.markdownRemark.frontmatter.fileName;
     const [demo, setDemo] = useState([]);
 
-    const addComponent = async type => {
-        console.log(`Loading ${type} component...`);
+    const addComponent = async file => {
+        console.log(`Loading ${file} component...`);
         const demoFolder = _.kebabCase(category.name);
-        import(`../demos/${demoFolder}/${type}.js`)
-          .then(component => {
-                let temp = [];
-                temp.push(component.default);
-                setDemo(temp);
-          })
-          .catch(error => {
-            console.error(`"${type}" not yet supported`);
-          });
+        const Demo = await importDemo(demoFolder, file);
+        const promise = [<Demo key={shortid.generate()}/>];
+        Promise.all(promise).then(setDemo);
     };
 
     useEffect(() => {
         async function fetchAPIDemo() {
-            const fileName = data.markdownRemark.frontmatter.fileName;
             await addComponent(fileName);
         }
         fetchAPIDemo();
@@ -35,7 +36,6 @@ export default function APIDemo({data}) {
         return {__html: data.markdownRemark.html};
     }
 
-    
     return (
         <Layout>
             <h1>{title}</h1>
@@ -57,17 +57,13 @@ export default function APIDemo({data}) {
                             ))
                         }
                     </ul>
-                
-                
             </div>
             
             <div>
                 <h2>Demo</h2>
-                {
-                    demo.length>0 && demo.map((Component, index) => (
-                        <Component key={index} />
-                    ))
-                }
+                <Suspense fallback={<div>Loading...</div>}>
+                    {demo}
+                </Suspense>
             </div>
         </Layout>
     )
