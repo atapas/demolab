@@ -1,5 +1,6 @@
 ---
 title: "Image Capture API"
+emoji: "camera"
 date: "2020-08-02"
 category:
   name: Web Apis

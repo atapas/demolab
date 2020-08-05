@@ -4,13 +4,14 @@ import Layout from "../components/layouts/layout";
 import FeatureList from '../components/features/featureList';
 
 const CategoryPost = ({ data }) => {
-    return (
-        <Layout>
-            <div>
-              <FeatureList data = { data.allMarkdownRemark }/>
-            </div>
-        </Layout>
-    )
+  console.log(data);
+  return (
+    <Layout>
+      <div>
+        <FeatureList data = { data.allMarkdownRemark }/>
+      </div>
+    </Layout>
+  )
 };
 
 export default CategoryPost;
@@ -26,6 +27,7 @@ export const query = graphql`
         node {
           id
           frontmatter {
+            emoji
             title
             date(formatString: "DD MMMM, YYYY")
             category {

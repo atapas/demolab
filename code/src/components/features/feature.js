@@ -13,12 +13,12 @@ export default function Feature(props) {
         style={{ width: '18rem' }}
         className="mb-2">
         <Card.Body>
-            <Card.Title><Emoji label="camera" symbol="📷"/>{data.node.frontmatter.title}</Card.Title>
+            <Card.Title><Emoji label="camera" symbol={data.node.frontmatter.emoji}/>{data.node.frontmatter.title}</Card.Title>
             <Card.Text>
               {data.node.excerpt} 
             </Card.Text>
-            <Emoji label="Backhand Index Pointing Right" symbol="👉"/>
-            <Link to="/image-capture">
+            <Emoji label="Backhand Index Pointing Right" symbol="ponting-right-hand"/>
+            <Link to={data.node.fields.slug}>
                Demo
             </Link>
         </Card.Body>

@@ -1,6 +1,13 @@
 
 import React from "react";
 
+const emojis = {
+  'camera': '📷',
+  'ponting-right-hand': '👉',
+  'battery': '🔋',
+  "broadcast": '📡'
+}
+
 const Emoji = props => (
     <span
       className="emoji"
@@ -8,7 +15,7 @@ const Emoji = props => (
       aria-label={props.label ? props.label : ""}
       aria-hidden={props.label ? "false" : "true"}
     >
-      {props.symbol}
+      {emojis[props.symbol]}
     </span>
 );
 
