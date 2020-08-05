@@ -18,7 +18,7 @@ export const query = graphql`
   query($category: String!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter: {category: {eq: $category}}}
+      filter: {frontmatter: {category: {name: {eq: $category}}}}
       ) {
       totalCount
       edges {
@@ -27,7 +27,11 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            category
+            category {
+              desc
+              image
+              name
+            }
           }
           fields {
             slug

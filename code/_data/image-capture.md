@@ -1,7 +1,10 @@
 ---
 title: "Image Capture API"
 date: "2020-08-02"
-category: "Web API"
+category:
+  name: Web Apis
+  desc: Some Desc
+  image: /assets/need_prep.gif
 tags:
   - "#image"
   - "#webcam"
@@ -9,7 +12,8 @@ tags:
   - "#multi-media"
   - "#video"
 fileName: "image-capture"
-link: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
+links: 
+  - "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
 ---
 The MediaStream Image Capture API is an API for capturing images or videos from a photographic device. 
 

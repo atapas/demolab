@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
+import * as _ from "lodash";
+
 import Layout from "../components/layouts/layout";
 
 export default function APIDemo({data}) {
+    const links = data.markdownRemark.frontmatter.links;
+    const title = data.markdownRemark.frontmatter.title;
+    const category = data.markdownRemark.frontmatter.category;
     const [demo, setDemo] = useState([]);
-   
 
     const addComponent = async type => {
         console.log(`Loading ${type} component...`);
-        
-        import(`../demos/${type}.js`)
+        const demoFolder = _.kebabCase(category.name);
+        import(`../demos/${demoFolder}/${type}.js`)
           .then(component => {
                 let temp = [];
                 temp.push(component.default);
@@ -34,12 +38,27 @@ export default function APIDemo({data}) {
     
     return (
         <Layout>
-            <h1>{data.markdownRemark.frontmatter.title}</h1>
+            <h1>{title}</h1>
             <div dangerouslySetInnerHTML={getDescription()} />
             <div>
-                More read from <a 
-                    href={data.markdownRemark.frontmatter.link}
-                    target='_blank' rel="noreferrer">Here</a>. 
+                More reads from:
+                    <ul>
+                        {
+                            (links && links.length > 0) &&
+                                links.map((link, index) => (
+                                    <li>
+                                        <a 
+                                            key = {index}
+                                            href={link}
+                                            target='_blank' 
+                                            rel="noreferrer">Here
+                                        </a> 
+                                    </li>
+                            ))
+                        }
+                    </ul>
+                
+                
             </div>
             
             <div>
@@ -62,9 +81,13 @@ export const query = graphql`
         title
         date(formatString: "DD MMMM, YYYY")
         tags
-        category
+        category {
+            desc
+            image
+            name
+        }
         fileName
-        link
+        links
     }
         
     }

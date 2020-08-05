@@ -27,10 +27,14 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               title
               tags
-              category
+              category {
+                desc
+                image
+                name
+              }
               date
               fileName
-              link
+              links
             }
             html
           }
