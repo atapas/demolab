@@ -46,9 +46,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const categorySet = new Set();
 
   result.data.allMarkdownRemark.edges.forEach((edge) => {
-    
+    let prefix = _.kebabCase(edge.node.frontmatter.category.name);
+    let demoPath = `${prefix}${edge.node.fields.slug}`;
+    console.log('##### demo page path', demoPath);
     createPage({
-      path: edge.node.fields.slug,
+      path: `${demoPath}`,
       component: path.resolve(`./src/templates/api-demo.js`),
       context: {
         // Data passed to context is available

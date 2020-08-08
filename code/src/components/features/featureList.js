@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
 
 import CardDeck from "react-bootstrap/CardDeck"
 import Feature from './feature';

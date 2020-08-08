@@ -46,9 +46,8 @@ export default function APIDemo({data}) {
                     {
                         (links && links.length > 0) &&
                             links.map((link, index) => (
-                                <li>
+                                <li key={shortid.generate()}>
                                     <a 
-                                        key = {index}
                                         href={link}
                                         target='_blank' 
                                         rel="noreferrer">Here
