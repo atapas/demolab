@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log('##### demo page path', demoPath);
     createPage({
       path: `${demoPath}`,
-      component: path.resolve(`./src/templates/api-demo.js`),
+      component: path.resolve(`./src/templates/demo-entry.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
