@@ -5,10 +5,10 @@ import CategoryList from "../components/categories/categoryList";
 export default function Home() {
   return (
     <Layout>
-      <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+      <h1>Hey! Welcome to the GreenRoots Demo Pad</h1>
       <p>
-        What do I like to do? Lots of course but definitely enjoy building
-        websites.
+        The demo pad helps you navigating through demo of several projects with 
+        guided information. Hope you enjoy it being here.
       </p>
       <CategoryList />
     </Layout>

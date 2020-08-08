@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         `
     )
   return (
-        <div style={{ margin: `3rem auto`, maxWidth: `90%` }}>
+        <div style={{ margin: `1rem 3rem auto 3rem`, maxWidth: `90%` }}>
             <Header title={data.site.siteMetadata.title}/>
             {children}
         </div>
