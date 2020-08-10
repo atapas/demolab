@@ -7,8 +7,8 @@ export default () => {
    
     useEffect(() => {
         console.log('Initial Load');
-       let cases = getCases();
-       setData(() => ([...data, ...cases]));
+        let cases = getCases();
+        setData(() => ([...data, ...cases]));
     },[]);
 
     useEffect(() => {
@@ -61,7 +61,7 @@ export default () => {
     }
 
     const CustomTD = props => {
-        const color = props.result ? '#008000' : '#FF0000';
+        const color = props.result ? '#228B22' : '#CD5C5C';
         const text = props.result ? 'true' : 'false';
         return(
             <td style={{backgroundColor: color}}>{ text }</td>
