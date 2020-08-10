@@ -40,24 +40,24 @@ export default function APIDemo({data}) {
         <Layout>
             <h1>{title}</h1>
             <div dangerouslySetInnerHTML={getDescription()} />
-            <div>
+            {
+                (links && links.length > 0) && <div>
                 More reads from:
                     <ul>
                     {
-                        (links && links.length > 0) &&
-                            links.map((link, index) => (
-                                <li key={shortid.generate()}>
-                                    <a 
-                                        href={link}
-                                        target='_blank' 
-                                        rel="noreferrer">Here
-                                    </a> 
-                                </li>
+                        links.map((link, index) => (
+                            <li key={shortid.generate()}>
+                                <a 
+                                    href={link}
+                                    target='_blank' 
+                                    rel="noreferrer">Here
+                                </a> 
+                            </li>
                         ))
                     }
                     </ul>
-            </div>
-            
+                </div>
+            }
             <div>
                 <h2>Demo</h2>
                 <Suspense fallback={<div>Loading...</div>}>
