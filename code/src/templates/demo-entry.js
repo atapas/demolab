@@ -1,8 +1,13 @@
 import React, { lazy, Suspense, useState, useEffect } from "react";
+import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
 
 import Layout from "../components/layouts/layout";
+
+const disqusConfig = {
+    shortname: 'greenroots'
+}
 
 const importDemo = (demoFolder, file) =>
   lazy(() =>
@@ -64,6 +69,7 @@ export default function APIDemo({data}) {
                     {demo}
                 </Suspense>
             </div>
+            <DiscussionEmbed {...disqusConfig} />
         </Layout>
     )
 }
