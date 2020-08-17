@@ -5,6 +5,8 @@ import shortid from "shortid";
 
 import Layout from "../components/layouts/layout";
 
+import demoEntryStyles from './demo-entry.module.css';
+
 const disqusConfig = {
     shortname: 'greenroots'
 }
@@ -70,7 +72,9 @@ export default function APIDemo({data}) {
                     {demo}
                 </Suspense>
             </div>
-            <DiscussionEmbed {...disqusConfig} />
+            <div className={demoEntryStyles.comment}>
+                <DiscussionEmbed {...disqusConfig} />
+            </div>
         </Layout>
     )
 }

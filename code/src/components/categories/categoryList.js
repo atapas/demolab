@@ -63,19 +63,16 @@ export default () => {
             showLegend={true} // optional value, pass false to disable the legend.
             legendPercentage={20} // number that represent the % of with that legend going to use.
             legendFont={{
-              family: "Arial",
               size: 12,
-              color: "#000",
+              color: "#FFF",
               weight: "bold",
             }}
             valueFont={{
-              family: "Arial",
               size: 16,
               color: "#000000",
               weight: "bold",
             }}
             labelFont={{
-              family: "Arial",
               size: 20,
               color: "#000000",
               weight: "bold",
