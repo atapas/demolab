@@ -1,12 +1,14 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
-
 import FeatureList from '../components/features/featureList';
 
+import SEO from '../components/seo';
+
 const CategoryPost = ({ data }) => {
-  console.log(data);
+  const title = data.allMarkdownRemark.edges[0].node.frontmatter.category.name;
   return (
     <Layout>
+      <SEO title={title} />
       <div>
         <FeatureList data = { data.allMarkdownRemark }/>
       </div>

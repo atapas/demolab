@@ -4,6 +4,7 @@ import * as _ from "lodash";
 import shortid from "shortid";
 
 import Layout from "../components/layouts/layout";
+import SEO from '../components/seo';
 
 import demoEntryStyles from './demo-entry.module.css';
 
@@ -46,6 +47,7 @@ export default function APIDemo({data}) {
 
     return (
         <Layout>
+            <SEO title={title} />
             <h1>{title}</h1>
             <div dangerouslySetInnerHTML={getDescription()} />
             {
@@ -94,8 +96,7 @@ export const query = graphql`
         }
         fileName
         links
-    }
-        
+        }
     }
   }
 `

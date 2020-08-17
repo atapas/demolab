@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `GreenRoots Demo Pad`,
+    title: `GreenRoots Demo Lab`,
+    description: `The demo lab helps you navigating through demos of several projects with 
+    guided information`,
+    author: `@tapasadhikary`
   },
   plugins: [
     {
@@ -11,6 +14,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
