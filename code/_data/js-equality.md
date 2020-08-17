@@ -6,6 +6,7 @@ category:
   name: JavaScript
   desc: All about JavaScript
   image: /assets/need_prep.gif
+  color: rgb(227, 227, 18)
 tags:
   - "#js"
   - "#JavaScript"

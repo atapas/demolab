@@ -6,6 +6,7 @@ category:
   name: React
   desc: Some Desc
   image: /assets/need_prep.gif
+  color: rgb(26, 231, 235)
 tags:
   - "#notification"
   - "#timeline"

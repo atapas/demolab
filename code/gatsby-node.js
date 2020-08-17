@@ -29,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
               tags
               category {
                 desc
+                color
                 image
                 name
               }
