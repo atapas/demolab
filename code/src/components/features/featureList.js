@@ -5,7 +5,6 @@ import Feature from './feature';
 
 export default function FeatureList(props) {
   console.log(props.data);
-  const totalCount = props.data.totalCount;
   const edges = props.data.edges;
 
   return (
