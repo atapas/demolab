@@ -50,6 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
     let prefix = _.kebabCase(edge.node.frontmatter.category.name);
     let demoPath = `${prefix}${edge.node.fields.slug}`;
     console.log('##### demo page path', demoPath);
+    console.log('$$$$$ edge.node.fields.slug', edge.node.fields.slug);
     createPage({
       path: `${demoPath}`,
       component: path.resolve(`./src/templates/demo-entry.js`),

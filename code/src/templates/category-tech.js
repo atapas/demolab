@@ -34,6 +34,7 @@ export const query = graphql`
               desc
               image
               name
+              color
             }
           }
           fields {

@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from 'react-bootstrap/Form';
-import _ from 'lodash';
 
 export default () => {
   const [data, setData] = useState([]);

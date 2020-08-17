@@ -16,6 +16,7 @@ const importDemo = (demoFolder, file) =>
 );
 
 export default function APIDemo({data}) {
+    console.log(data);
     const links = data.markdownRemark.frontmatter.links;
     const title = data.markdownRemark.frontmatter.title;
     const category = data.markdownRemark.frontmatter.category;
