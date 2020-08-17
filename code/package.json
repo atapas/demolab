@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@weknow/react-bubble-chart-d3": "^1.0.12",
     "bootstrap": "^4.5.0",
     "disqus-react": "^1.0.9",
     "gatsby": "^2.23.12",
