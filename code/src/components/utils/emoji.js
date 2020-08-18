@@ -7,7 +7,8 @@ const emojis = {
   'battery': '🔋',
   "broadcast": '📡',
   "bell": '🔔',
-  "handshake": '🤝'
+  "handshake": '🤝',
+  "vibration": '📳'
 }
 
 const Emoji = props => (
