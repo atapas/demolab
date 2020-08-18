@@ -6,11 +6,11 @@ import shortid from "shortid";
 import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
 
-import demoEntryStyles from './demo-entry.module.css';
+// import demoEntryStyles from './demo-entry.module.css';
 
-const disqusConfig = {
+/*const disqusConfig = {
     shortname: 'greenroots'
-}
+}*/
 
 export default function APIDemo({data}) {
     console.log(data);
@@ -76,9 +76,9 @@ export default function APIDemo({data}) {
                     ))
                 }
             </div>
-            <div className={demoEntryStyles.comment}>
+            {/*<div className={demoEntryStyles.comment}>
                 <DiscussionEmbed {...disqusConfig} />
-            </div>
+            </div>*/}
         </Layout>
     )
 }

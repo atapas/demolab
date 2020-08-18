@@ -1,0 +1,13 @@
+.broadcast{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+.senderReciever {
+    padding: 10px;
+    margin: 13px;
+    border: 1px solid;
+    border-radius: 5px;
+}
