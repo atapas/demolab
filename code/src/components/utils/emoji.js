@@ -8,7 +8,8 @@ const emojis = {
   "broadcast": '📡',
   "bell": '🔔',
   "handshake": '🤝',
-  "vibration": '📳'
+  "vibration": '📳',
+  "screen": '📺'
 }
 
 const Emoji = props => (

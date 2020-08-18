@@ -1,7 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 
-import BroadcastStyles from '../broadcast.module.css';
+import DemoStyles from '../../demo.module.css';
 
 export default () => {
 
@@ -14,7 +14,7 @@ export default () => {
     }
 
     return(
-        <div className={BroadcastStyles.senderReciever}>
+        <div className={DemoStyles.senderReciever}>
             <h4>Sender</h4>
             <Button onClick={sendMessage}>Send Message</Button>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BroadcastStyles from '../broadcast.module.css';
+import DemoStyles from '../../demo.module.css';
 
 export default () => {
 
@@ -13,7 +13,7 @@ export default () => {
     });
 
     return(
-        <div className={BroadcastStyles.senderReciever}>
+        <div className={DemoStyles.senderReciever}>
             <h4>Reciever</h4>
             <span id="msg"></span>
         </div>

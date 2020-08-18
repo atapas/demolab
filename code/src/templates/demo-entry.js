@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DiscussionEmbed } from "disqus-react";
+// import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
 
