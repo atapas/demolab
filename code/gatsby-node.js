@@ -47,8 +47,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const categorySet = new Set();
 
   result.data.allMarkdownRemark.edges.forEach((edge) => {
-    let prefix = _.kebabCase(edge.node.frontmatter.category.name);
-    let demoPath = `${prefix}${edge.node.fields.slug}`;
+    // let prefix = _.kebabCase(edge.node.frontmatter.category.name);
+    let demoPath = `${edge.node.fields.slug}`;
     console.log('##### demo page path', demoPath);
     console.log('$$$$$ edge.node.fields.slug', edge.node.fields.slug);
     createPage({
