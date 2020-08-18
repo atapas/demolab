@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
@@ -12,30 +12,30 @@ const disqusConfig = {
     shortname: 'greenroots'
 }
 
-const importDemo = (demoFolder, file) =>
-  lazy(() =>
-    import(`../demos/${demoFolder}/${file}.js`)
-      .catch(() => console.log('Error in importing'))
-);
-
 export default function APIDemo({data}) {
     console.log(data);
     const links = data.markdownRemark.frontmatter.links;
     const title = data.markdownRemark.frontmatter.title;
     const category = data.markdownRemark.frontmatter.category;
-    const fileName = data.markdownRemark.frontmatter.fileName;
     const [demo, setDemo] = useState([]);
 
     const addComponent = async file => {
         console.log(`Loading ${file} component...`);
         const demoFolder = _.kebabCase(category.name);
-        const Demo = await importDemo(demoFolder, file);
-        const promise = [<Demo key={shortid.generate()}/>];
-        Promise.all(promise).then(setDemo);
+        import(`../demos/${demoFolder}/${file}.js`)
+          .then(component => {
+                let temp = [];
+                temp.push(component.default);
+                setDemo(temp);
+          })
+          .catch(error => {
+            console.error(`"${file}" not yet supported`);
+          });
     };
 
     useEffect(() => {
         async function fetchAPIDemo() {
+            const fileName = data.markdownRemark.frontmatter.fileName;
             await addComponent(fileName);
         }
         fetchAPIDemo();
@@ -70,9 +70,11 @@ export default function APIDemo({data}) {
             }
             <div>
                 <h2>Demo</h2>
-                <Suspense fallback={<div>Loading...</div>}>
-                    {demo}
-                </Suspense>
+                {
+                    demo.length > 0 && demo.map((Component, index) => (
+                        <Component key={index} />
+                    ))
+                }
             </div>
             <div className={demoEntryStyles.comment}>
                 <DiscussionEmbed {...disqusConfig} />
