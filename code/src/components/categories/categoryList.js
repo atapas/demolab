@@ -52,21 +52,9 @@ export default () => {
       {chartData.length > 0 ? (
         <div className={categoryListStyles.bubble}>
           <BubbleChart
-            graph={{
-              zoom: 1.1,
-              offsetX: -0.05,
-              offsetY: -0.01,
-            }}
             width={500}
-            height={500}
-            padding={25} // optional value, number that set the padding between bubbles
-            showLegend={true} // optional value, pass false to disable the legend.
-            legendPercentage={20} // number that represent the % of with that legend going to use.
-            legendFont={{
-              size: 12,
-              color: "#FFF",
-              weight: "bold",
-            }}
+            padding={30} // optional value, number that set the padding between bubbles
+            showLegend={false} // optional value, pass false to disable the legend.
             valueFont={{
               size: 16,
               color: "#000000",
