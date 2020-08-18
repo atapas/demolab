@@ -38,7 +38,13 @@ export default () => {
             />
             {
                 supported && 
+                <>
+                    <p>
+                        The Vibration API works best on mobiles, tablets etc. It may not do 
+                        anything on desktops even when the browser supports.
+                    </p>
                     <Button onClick={manageVibration}>{ start ? 'Stop Vibration' : 'Start Vibration'}</Button>
+                </>
             }
         </>
         
