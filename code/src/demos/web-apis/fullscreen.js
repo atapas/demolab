@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button';
-
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import FeatureSupport from "../../components/utils/feature-support";
-
 import DemoStyles from '../demo.module.css';
-import santa from './fullscreen/santa.png';
 
 export default () => {
     const [supported, setSupported] = useState(false);
-    
+    const imageData = useStaticQuery(
+        graphql`
+          query {
+            image: file(relativePath: {eq: "santa.png"}) {
+                childImageSharp {
+                    fixed(width: 300) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
+            }
+          }
+        `
+      );
+    console.log('imageData', imageData);  
     useEffect(() => {
         if (document.fullscreenEnabled) {
             setSupported(true);
@@ -32,8 +44,11 @@ export default () => {
             {
                 supported && 
                 <div className={DemoStyles.column}>
-                    <img id="fs_id" src={santa} alt="santa" width={300} height={300}/>
-                    <Button onClick={manageFullscreen}>Enter Fullscreen</Button>
+                    <div id="fs_id">
+                        <Img fixed={imageData.image.childImageSharp.fixed} alt="santa" />
+                    </div>
+                    
+                    <Button onClick={manageFullscreen}>Enter Fullscreen with Santa</Button>
                 </div>
             }
         </>

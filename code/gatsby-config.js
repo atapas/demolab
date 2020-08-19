@@ -3,7 +3,8 @@ module.exports = {
     title: `GreenRoots Demo Lab`,
     description: `The demo lab helps you navigating through demos of several projects with 
     guided information`,
-    author: `@tapasadhikary`
+    author: `@tapasadhikary`,
+    website: `https://tapasadhikary.com`
   },
   plugins: [
     {
@@ -13,6 +14,15 @@ module.exports = {
         path: `${__dirname}/_data`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/_images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {

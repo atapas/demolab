@@ -1,12 +1,10 @@
 import React from "react";
-import * as _ from "lodash";
 import Card from "react-bootstrap/Card";
 import { Link } from 'gatsby';
 import Emoji from '../utils/emoji';
 
 export default function Feature(props) {
   const data = props.data;
-  // const prefix = _.kebabCase(data.node.frontmatter.category.name);
   const link = `${data.node.fields.slug}`
     return (
         <Card 

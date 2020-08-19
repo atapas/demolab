@@ -2,11 +2,17 @@ import React from "react";
 import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
 
-export default () => {
+
+const Settings = () => {
     return(
         <Layout>
-            <SEO title="Contact" />
-            <h1>Contact Page</h1>
+            <SEO title="Settings" />
+            <h1>Settings</h1>
+           
+            
         </Layout>
     )
-}
+};
+
+export default Settings;
+
