@@ -19,6 +19,7 @@ export default () => {
                   color
                   desc
                   image
+                  hide
                 }
               }
             }
@@ -31,15 +32,19 @@ export default () => {
   const [chartData, setChartData] = useState([])
 
   useEffect(() => {
-    let categories = categoryGroupedData.allMarkdownRemark.group
+    let categories = categoryGroupedData.allMarkdownRemark.group;
     let ret = categories.map((elem, index) => {
       let obj = {};
       obj["label"] = elem.fieldValue;
       obj["value"] = elem.totalCount;
       obj["color"] = elem.nodes[0].frontmatter.category.color;
+      obj["hide"] = elem.nodes[0].frontmatter.category.hide;
       return obj;
-    })
-    setChartData(ret)
+    });
+    let filtered = ret.filter((elem) => {
+      return (_.isUndefined(elem.hide) || !elem.hide);
+    });
+    setChartData(filtered);
   }, [categoryGroupedData])
 
   const bubbleClick = label => {

@@ -9,7 +9,10 @@ const emojis = {
   "bell": '🔔',
   "handshake": '🤝',
   "vibration": '📳',
-  "screen": '📺'
+  "screen": '📺',
+  "keyboard": '⌨️',
+  "selfie": '🤳',
+  "anchor": '⚓'
 }
 
 const Emoji = props => (
