@@ -14,3 +14,17 @@ a {
 circle {
     cursor: pointer;
 }
+
+.column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

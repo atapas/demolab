@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import FeatureSupport from "../../components/utils/feature-support";
-import DemoStyles from '../demo.module.css';
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -43,7 +42,7 @@ export default () => {
             
             {
                 supported && 
-                <div className={DemoStyles.column}>
+                <div className="column">
                     <div id="fs_id">
                         <Img fixed={imageData.image.childImageSharp.fixed} alt="santa" />
                     </div>
