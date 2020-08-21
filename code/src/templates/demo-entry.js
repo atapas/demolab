@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
-// import { DiscussionEmbed } from "disqus-react";
+import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
 
 import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
 
-// import demoEntryStyles from './demo-entry.module.css';
-
-/*const disqusConfig = {
-    shortname: 'greenroots'
-}*/
+import demoEntryStyles from './demo-entry.module.css';
 
 export default function APIDemo({data}) {
     console.log(data);
     const links = data.markdownRemark.frontmatter.links;
     const title = data.markdownRemark.frontmatter.title;
     const category = data.markdownRemark.frontmatter.category;
+    const disqusConfig = {
+        shortname: 'greenroots',
+        config: { identifier: shortid.generate(), title },
+    }
     const [demo, setDemo] = useState([]);
 
     const addComponent = async file => {
@@ -56,10 +56,6 @@ export default function APIDemo({data}) {
         return link;
     }
 
-    const getOrigin = link => {
-
-    }
-
     return (
         <Layout>
             <SEO title={title} />
@@ -91,9 +87,9 @@ export default function APIDemo({data}) {
                     ))
                 }
             </div>
-            {/*<div className={demoEntryStyles.comment}>
+            <div className={demoEntryStyles.comment}>
                 <DiscussionEmbed {...disqusConfig} />
-            </div>*/}
+            </div>
         </Layout>
     )
 }
