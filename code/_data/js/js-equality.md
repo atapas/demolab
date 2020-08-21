@@ -13,6 +13,7 @@ tags:
   - "objects"
   - "equals"
 fileName: "js-equality"
+code_embed_link: "js-equality"
 links: 
   - "GreenRoots Blog$#$#$#https://blog.greenroots.info/javascript-equality-comparison-with-and-objectis-ckdpt2ryk01vel9s186ft8cwl"
 ---
