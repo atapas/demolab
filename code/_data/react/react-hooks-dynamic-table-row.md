@@ -1,5 +1,5 @@
 ---
-title: "React Hooks"
+title: "Dynamically add table rows using react hooks"
 emoji: "anchor"
 date: "2020-08-31"
 category:
