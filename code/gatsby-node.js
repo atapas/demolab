@@ -37,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
               date
               fileName
               links
+              code_embed_link
             }
             html
           }
