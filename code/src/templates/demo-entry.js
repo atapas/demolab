@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sdk from "@stackblitz/sdk";
-import {isMobile, isTablet} from 'react-device-detect';
+import {isMobileOnly, isTablet} from 'react-device-detect';
 import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
@@ -25,9 +25,9 @@ export default function APIDemo({ data }) {
   };
   const [demo, setDemo] = useState([]);
   const [hideCodeTab, setHideCodeTab] = useState(true);
-  console.log(isMobile, isTablet);
+  console.log(isMobileOnly, isTablet);
   const shouldHideCodeTab =
-    _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink) || (isMobile && !isTablet);
+    _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink) || (isMobileOnly && !isTablet);
 
   const addComponent = async file => {
     console.log(`Loading ${file} component...`)
