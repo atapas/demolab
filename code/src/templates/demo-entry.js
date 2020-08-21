@@ -45,6 +45,21 @@ export default function APIDemo({data}) {
         return {__html: data.markdownRemark.html};
     }
 
+    const getLinkPart = (link, part) => {
+        const SEPARATOR = '$#$#$#'
+        const arr = link.split(SEPARATOR);
+        if (part === 'origin') {
+            return arr[0];
+        } else if (part === 'base'){
+            return arr[1];
+        }
+        return link;
+    }
+
+    const getOrigin = link => {
+
+    }
+
     return (
         <Layout>
             <SEO title={title} />
@@ -58,9 +73,9 @@ export default function APIDemo({data}) {
                         links.map((link, index) => (
                             <li key={shortid.generate()}>
                                 <a 
-                                    href={link}
+                                    href={getLinkPart(link, 'base')}
                                     target='_blank' 
-                                    rel="noreferrer">Here
+                                    rel="noreferrer">{getLinkPart(link, 'origin')}
                                 </a> 
                             </li>
                         ))

@@ -15,7 +15,7 @@ tags:
   - "#video"
 fileName: "image-capture"
 links: 
-  - "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
+  - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
 ---
 The MediaStream Image Capture API is an API for capturing images or videos from a photographic device. 
 

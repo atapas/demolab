@@ -14,7 +14,7 @@ tags:
   - "equals"
 fileName: "js-equality"
 links: 
-  - "https://blog.greenroots.info/javascript-equality-comparison-with-and-objectis-ckdpt2ryk01vel9s186ft8cwl"
+  - "GreenRoots Blog$#$#$#https://blog.greenroots.info/javascript-equality-comparison-with-and-objectis-ckdpt2ryk01vel9s186ft8cwl"
 ---
 Traditionally JavaScript provides 2 special operators for equality comparison:
 - `==` is for Abstract Equality Comparison which performs a loose equality between the operands.

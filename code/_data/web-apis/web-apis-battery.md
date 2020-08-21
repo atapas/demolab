@@ -11,7 +11,7 @@ tags:
   - "#battery"
 fileName: "battery"
 links: 
-  - "https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"
+  - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"
 ---
 The Battery Status API, more often referred to as the Battery API, provides information about the system's battery charge level and lets you be notified by events that are sent when the battery level or charging status change. 
 
