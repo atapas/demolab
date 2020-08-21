@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sdk from "@stackblitz/sdk";
+import {isMobile, isTablet} from 'react-device-detect';
 import { DiscussionEmbed } from "disqus-react";
 import * as _ from "lodash";
 import shortid from "shortid";
@@ -24,7 +25,9 @@ export default function APIDemo({ data }) {
   };
   const [demo, setDemo] = useState([]);
   const [hideCodeTab, setHideCodeTab] = useState(true);
-  const isCodeEmbedUnDefined = _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink);
+  console.log(isMobile, isTablet);
+  const shouldHideCodeTab =
+    _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink) || (isMobile && !isTablet);
 
   const addComponent = async file => {
     console.log(`Loading ${file} component...`)
@@ -49,8 +52,8 @@ export default function APIDemo({ data }) {
   }, []);
 
   useEffect(() => {
-    isCodeEmbedUnDefined ? setHideCodeTab(true) : setHideCodeTab(false);
-  }, [isCodeEmbedUnDefined]);
+    shouldHideCodeTab ? setHideCodeTab(true) : setHideCodeTab(false);
+  }, [shouldHideCodeTab]);
 
   const getDescription = () => {
     return { __html: data.markdownRemark.html }
