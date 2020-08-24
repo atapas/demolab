@@ -12,7 +12,8 @@ const emojis = {
   "screen": '📺',
   "keyboard": '⌨️',
   "selfie": '🤳',
-  "anchor": '⚓'
+  "anchor": '⚓',
+  "clipboard": '📋'
 }
 
 const Emoji = props => (
