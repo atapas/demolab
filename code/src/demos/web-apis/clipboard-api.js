@@ -7,17 +7,13 @@ import FeatureSupport from "../../components/utils/feature-support";
 const CopyForm = () => {
     const [copyText, setCopytext] = useState();
 
-    const performCopy = () => {
-        console.log('Copy');
-        navigator.clipboard
-          .writeText(copyText)
-          .then(() => {
-            console.log("Text copied to clipboard");
-          })
-          .catch(err => {
-            // This can happen if the user denies clipboard permissions:
-            console.error("Could not copy text: ", err);
-          })
+    async function performCopy() {
+        try {
+            await navigator.clipboard.writeText(copyText);
+            console.log('Page URL copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
     }
 
     const textChange = evt => {
@@ -48,17 +44,14 @@ const PasteForm = () => {
 
     const [pasteText, setPastetext] = useState();
 
-    const performPaste = () => {
-        console.log('Paste');
-        navigator.clipboard
-          .readText()
-          .then(text => {
-            console.log("Pasted content: ", text);
-            setPastetext(text);
-          })
-          .catch(err => {
-            console.error("Failed to read clipboard contents: ", err)
-          })
+    async function performPaste() {
+        try {
+          const text = await navigator.clipboard.readText();
+          setPastetext(text);
+          console.log('Pasted content: ', text);
+        } catch (err) {
+          console.error('Failed to read clipboard contents: ', err);
+        }
     }
 
     return (
