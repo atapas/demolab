@@ -1,5 +1,5 @@
 ---
-title: "Clipboard API"
+title: "Clipboard API(Async)"
 emoji: "clipboard"
 date: "2020-08-24"
 category:
@@ -12,6 +12,7 @@ tags:
 fileName: "clipboard-api"
 links: 
   - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API"
+  - "Google Developer Blog$#$#$#https://developers.google.com/web/updates/2018/03/clipboardapi"
 ---
 The `Clipboard API` provides the ability to respond to clipboard commands (cut, copy, and paste) as well as to asynchronously read from and write to the system clipboard. 
 

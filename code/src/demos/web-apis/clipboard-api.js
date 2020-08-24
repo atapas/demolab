@@ -75,7 +75,9 @@ export default () => {
     const [supported, setSupported] = useState(false);
     
     useEffect(() => {
-        if (navigator.clipboard) {
+        if (navigator.clipboard 
+            && navigator.clipboard.read 
+            && navigator.clipboard.write) {
             setSupported(true);
         } else {
             setSupported(false);
@@ -85,7 +87,7 @@ export default () => {
         <>
             <FeatureSupport
                 support={supported}
-                feature={"Clipboard API"}
+                feature={"Clipboard Async API"}
                 caniuseLink={"https://caniuse.com/#feat=mdn-api_clipboard_read"}
             />
             {
