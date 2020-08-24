@@ -3,7 +3,7 @@ import React from "react";
 
 const emojis = {
   'camera': '📷',
-  'ponting-right-hand': '👉',
+  'pointing-right-hand': '👉',
   'battery': '🔋',
   "broadcast": '📡',
   "bell": '🔔',
@@ -13,7 +13,8 @@ const emojis = {
   "keyboard": '⌨️',
   "selfie": '🤳',
   "anchor": '⚓',
-  "clipboard": '📋'
+  "clipboard": '📋',
+  "network": '📶'
 }
 
 const Emoji = props => (

@@ -17,7 +17,7 @@ export default function Feature(props) {
             <Card.Text>
               {data.node.excerpt} 
             </Card.Text>
-            <Emoji label="Backhand Index Pointing Right" symbol="ponting-right-hand"/>
+            <Emoji label="Backhand Index Pointing Right" symbol="pointing-right-hand"/>
             <Link to={link}>
                Demo
             </Link>

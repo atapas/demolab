@@ -6,6 +6,10 @@ body {
     font-family: 'Chilanka', cursive;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-shadow: none;
     background-image: none;
