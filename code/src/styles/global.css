@@ -32,3 +32,7 @@ circle {
     align-items: center;
     flex-direction: row;
 }
+
+.container {
+    padding: 0
+}
