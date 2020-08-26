@@ -25,6 +25,9 @@ export default function APIDemo({ data }) {
   };
   const [demo, setDemo] = useState([]);
   const [hideCodeTab, setHideCodeTab] = useState(true);
+  const [showDemoTab, setShowDemoTab] = useState(true);
+  const [defaultTabKey, setDefaultTabKey] = useState('demo');
+
   console.log(isMobileOnly, isTablet);
   const shouldHideCodeTab =
     _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink) || (isMobileOnly && !isTablet);
@@ -37,9 +40,11 @@ export default function APIDemo({ data }) {
         let temp = []
         temp.push(component.default)
         setDemo(temp)
+        setShowDemoTab(true);
       })
       .catch(error => {
-        console.error(`"${file}" not yet supported`)
+        setShowDemoTab(false);
+        console.error(`"${file}" is not loaded successfully due to the ${error}`);
       })
   }
 
@@ -54,6 +59,16 @@ export default function APIDemo({ data }) {
   useEffect(() => {
     shouldHideCodeTab ? setHideCodeTab(true) : setHideCodeTab(false);
   }, [shouldHideCodeTab]);
+
+  useEffect(() => {
+    if (showDemoTab) {
+      setDefaultTabKey('demo');
+    } else if (!hideCodeTab) {
+      setDefaultTabKey('scode');
+    } else {
+      setDefaultTabKey('read');
+    }
+  }, [showDemoTab, hideCodeTab]);
 
   const getDescription = () => {
     return { __html: data.markdownRemark.html }
@@ -99,21 +114,26 @@ export default function APIDemo({ data }) {
       <div dangerouslySetInnerHTML={getDescription()} />
 
       <Tabs
-        defaultActiveKey="demo"
+        defaultActiveKey={defaultTabKey}
         id="demo-entry-tab"
         onSelect={k => manageTab(k)}
       >
-        <Tab eventKey="demo" title="Demo" style={{ padding: "10px" }}>
-          <div>
-            {demo.length > 0 &&
-              demo.map((Component, index) => <Component key={index} />)}
-          </div>
-        </Tab>
-        { !hideCodeTab && <Tab eventKey="scode" title="Source Code" style={{ padding: "10px" }}>
-          <div className="row" id="codeEmbed"></div>
-        </Tab>
+        {
+          showDemoTab &&
+          <Tab eventKey="demo" title="Demo" style={{ padding: "10px" }}>
+            <div>
+              {demo.length > 0 &&
+                demo.map((Component, index) => <Component key={index} />)}
+            </div>
+          </Tab>
         }
-        <Tab eventKey="read" title="Read" style={{ padding: "10px" }}>
+        { 
+          !hideCodeTab && 
+          <Tab eventKey="scode" title="Source Code" style={{ padding: "10px" }}>
+            <div className="row" id="codeEmbed"></div>
+          </Tab>
+        }
+        <Tab eventKey="read" title="Important Links" style={{ padding: "10px" }}>
           {links && links.length > 0 && (
             <div>
               More reads from:

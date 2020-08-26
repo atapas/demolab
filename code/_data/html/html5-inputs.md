@@ -7,7 +7,6 @@ category:
   desc: All about HTML5 Inputs
   image: /assets/need_prep.gif
   color: rgb(255, 87, 51)
-  hide: true
 tags:
   - "#html"
   - "#html5"
