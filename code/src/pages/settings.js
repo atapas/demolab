@@ -2,15 +2,17 @@ import React from "react";
 import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
 
-import UnderConstruction from '../components/utils/under-construction';
+import Toggle from '../theme/Toggler';
+import { useDarkMode } from "../theme/useDarkMode";
 
 
 const Settings = () => {
+    const [theme, themeToggler] = useDarkMode();
     return(
         <Layout>
             <SEO title="Settings" />
             <h1>Settings</h1>
-            <UnderConstruction />
+            <Toggle theme={theme} toggleTheme={themeToggler} />
             
         </Layout>
     )
