@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Button from 'react-bootstrap/Button';
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import FeatureSupport from "../../components/utils/feature-support";
+import StyledButton from '../../components/styled/styled-button';
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -47,7 +47,7 @@ export default () => {
                         <Img fixed={imageData.image.childImageSharp.fixed} alt="santa" />
                     </div>
                     
-                    <Button onClick={manageFullscreen}>Enter Fullscreen with Santa</Button>
+                    <StyledButton onClick={manageFullscreen}>Enter Fullscreen with Santa</StyledButton>
                 </div>
             }
         </>

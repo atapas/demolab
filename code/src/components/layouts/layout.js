@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 
 import { GlobalStyles } from "../../theme/globalStyles";
-import { useDarkMode } from "../../theme/useDarkMode";
+
 
 const Container = styled.div`
   max-width: 90%;
@@ -26,8 +26,7 @@ export default function Layout({ children }) {
   );
 
   const localTheme = window.localStorage.getItem('theme');
-  const themeMode = localTheme === 'light' ? lightTheme : darkTheme;
-
+  const themeMode = (!localTheme || localTheme === 'light') ? lightTheme : darkTheme;
 
   return (
     <ThemeProvider theme={ themeMode }>

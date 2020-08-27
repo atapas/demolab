@@ -1,5 +1,5 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
+import StyledButton from '../../../components/styled/styled-button';
 
 import DemoStyles from '../../demo.module.css';
 
@@ -16,7 +16,7 @@ export default () => {
     return(
         <div className={DemoStyles.senderReciever}>
             <h4>Sender</h4>
-            <Button onClick={sendMessage}>Send Message</Button>
+            <StyledButton onClick={sendMessage}>Send Message</StyledButton>
 
         </div>
         
