@@ -3,11 +3,11 @@ import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
 
 import Toggle from '../theme/Toggler';
-import { useDarkMode } from "../theme/useDarkMode";
+import { useTheme } from "../theme/useTheme";
 
 
 const Settings = () => {
-    const [theme, themeToggler] = useDarkMode();
+    const [theme, themeToggler] = useTheme();
     return(
         <Layout>
             <SEO title="Settings" />
