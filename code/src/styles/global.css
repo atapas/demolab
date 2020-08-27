@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap");
 
-body {
-    background-color: #000;
-    color: #FFF;
-    font-family: 'Chilanka', cursive;
-}
-
 li {
     list-style: none;
 }
