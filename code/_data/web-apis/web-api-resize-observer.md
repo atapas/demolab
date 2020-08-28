@@ -1,5 +1,5 @@
 ---
-title: "ResizeObserver"
+title: "Resize Observer API"
 emoji: "face-with-monocle"
 date: "2020-08-28"
 category:
@@ -10,11 +10,8 @@ category:
 tags:
   - "#resize"
   - "#screen"
-  - "#timing"
 fileName: "resizeobserver"
 links: 
-  - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver"
+  - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API"
 ---
-The `ResizeObserver` interface reports changes to the dimensions of an Element's content or border box, or the bounding box of an SVGElement.
-
-ResizeObserver avoids infinite callback loops and cyclic dependencies that are often created when resizing via a callback function. It does this by only processing elements deeper in the DOM in subsequent frames. Implementations should, if they follow the specification, invoke resize events before paint and after layout.
+The Resize Observer API provides a performant mechanism by which code can monitor an element for changes to its size, with notifications being delivered to the observer each time the size changes.
