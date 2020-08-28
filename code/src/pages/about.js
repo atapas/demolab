@@ -30,7 +30,7 @@ export default () => {
             <SEO title="About" />
             <section>
                 <h1>Demolab</h1>
-                <p>Demolab is a fantacy project created to understand the power 
+                <p>Demolab is my fantasy project created to understand the power 
                 of JAMstack using JavaScript(Reactjs), API(Netlify and Aws) and pre-built Markup(Gatsby).</p>
             </section>
             <br />
