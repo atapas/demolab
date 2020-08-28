@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
+import StyledButton from '../../components/styled/styled-button';
 import UnderConstruction from "../../components/utils/under-construction";
-import Button from 'react-bootstrap/Button';
 
 export default () => {
 
@@ -38,13 +38,13 @@ export default () => {
             />
             {
                 supported && 
-                <>
+                <div className="column">
                     <p>
                         The Vibration API works best on mobiles, tablets etc. It may not do 
                         anything on desktops even when the browser supports.
                     </p>
-                    <Button onClick={manageVibration}>{ start ? 'Stop Vibration' : 'Start Vibration'}</Button>
-                </>
+                    <StyledButton onClick={manageVibration}>{ start ? 'Stop Vibration' : 'Start Vibration'}</StyledButton>
+                </div>
             }
             */}
             <UnderConstruction />

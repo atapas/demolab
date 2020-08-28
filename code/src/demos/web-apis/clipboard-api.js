@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import _ from 'lodash';
 import FeatureSupport from "../../components/utils/feature-support";
+import StyledButton from '../../components/styled/styled-button';
 import UnderConstruction from '../../components/utils/under-construction';
 
 const CopyForm = () => {
     const [copyText, setCopytext] = useState();
 
-    async function performCopy() {
+    async function performCopy(event) {
+        event.preventDefault();
         try {
             await navigator.clipboard.writeText(copyText);
             console.log('Page URL copied to clipboard');
@@ -32,11 +33,11 @@ const CopyForm = () => {
             </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" 
-            onClick={performCopy} 
+        <StyledButton 
+            onClick={(event) => performCopy(event)} 
             disabled={(_.isUndefined(copyText) || _.isNull(copyText))}>
             Copy to Clipboard
-        </Button>
+        </StyledButton>
         </Form>
     )
 };
@@ -45,7 +46,8 @@ const PasteForm = () => {
 
     const [pasteText, setPastetext] = useState();
 
-    async function performPaste() {
+    async function performPaste(event) {
+        event.preventDefault();
         try {
           const text = await navigator.clipboard.readText();
           setPastetext(text);
@@ -65,9 +67,9 @@ const PasteForm = () => {
           </Form.Text>
         </Form.Group>
   
-        <Button variant="primary" onClick={performPaste} >
+        <StyledButton onClick={(event) => performPaste(event)} >
           Paste from Clipboard
-        </Button>
+        </StyledButton>
       </Form>
     )
 };
