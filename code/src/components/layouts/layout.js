@@ -25,7 +25,7 @@ export default function Layout({ children }) {
       `
   );
 
-  const localTheme = localStorage.getItem('theme');
+  const localTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme');
   const themeMode = (!localTheme || localTheme === 'light') ? lightTheme : darkTheme;
 
   return (
