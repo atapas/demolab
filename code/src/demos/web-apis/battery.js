@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import FeatureSupport from "../../components/utils/feature-support"
-import { Battery, BatteryCharging } from "react-feather"
+import { Battery, BatteryCharging } from "react-feather";
+
+import UnderConstruction from '../../components/utils/under-construction';
 
 export default () => {
   const [charging, setCharging] = useState(false)
@@ -109,6 +111,7 @@ export default () => {
 
   return (
     <>
+    {/*
       <FeatureSupport
         support={supported}
         feature={"Battery Status API"}
@@ -126,6 +129,8 @@ export default () => {
           {getBatteryInfo()}
         </div>
       ) : null}
+      */}
+      <UnderConstruction />
     </>
   )
 }

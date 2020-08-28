@@ -58,7 +58,7 @@ export default () => {
         <div className={categoryListStyles.bubble}>
           <BubbleChart
             width={500}
-            padding={30} // optional value, number that set the padding between bubbles
+            padding={38} // optional value, number that set the padding between bubbles
             showLegend={false} // optional value, pass false to disable the legend.
             valueFont={{
               size: 16,
