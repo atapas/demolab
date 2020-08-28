@@ -1,7 +1,7 @@
 ---
 title: "Fullscreen API"
 emoji: "screen"
-date: "2020-08-18"
+date: "2020-08-28"
 category:
   name: Web Apis
   desc: Some Desc

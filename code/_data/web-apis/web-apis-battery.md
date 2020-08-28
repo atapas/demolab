@@ -1,7 +1,7 @@
 ---
 title: "Battery API"
 emoji: "battery"
-date: "2020-08-05"
+date: "2020-08-25"
 category:
   name: Web Apis
   desc: Some Desc

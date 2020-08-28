@@ -1,7 +1,7 @@
 ---
 title: "Clipboard API(Async)"
 emoji: "clipboard"
-date: "2020-08-24"
+date: "2020-08-26"
 category:
   name: Web Apis
   desc: "When writing code for the Web, there are a large number of Web APIs available. Web APIs are typically used with JavaScript, although this doesn't always have to be the case."

@@ -1,7 +1,7 @@
 ---
 title: "Vibration API"
 emoji: "vibration"
-date: "2020-08-18"
+date: "2020-08-22"
 category:
   name: Web Apis
   desc: Some Desc
