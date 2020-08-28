@@ -16,7 +16,8 @@ const emojis = {
   "clipboard": '📋',
   "network": '📶',
   "stopwatch": '⏱️',
-  "face-with-monocle": '🧐'
+  "face-with-monocle": '🧐',
+  "bluetooth": '🤙'
 }
 
 const Emoji = props => (

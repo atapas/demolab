@@ -66,7 +66,7 @@ export default () => {
               weight: "bold",
             }}
             labelFont={{
-              size: 20,
+              size: 18,
               color: "#000000",
               weight: "bold",
             }}

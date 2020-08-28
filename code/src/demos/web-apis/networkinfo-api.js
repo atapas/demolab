@@ -3,7 +3,6 @@ import FeatureSupport from "../../components/utils/feature-support";
 import Emoji from '../../components/utils/emoji';
 
 import demoStyles from '../demo.module.css';
-import UnderConstruction from '../../components/utils/under-construction';
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -21,7 +20,7 @@ export default () => {
 
     return(
         <>
-        {/*
+      
             <FeatureSupport
                 support={supported}
                 feature={"Network Information API"}
@@ -58,8 +57,7 @@ export default () => {
                     </ul>
                 </div>
             }
-            */}
-            <UnderConstruction />
+            
         </>
     )
 }

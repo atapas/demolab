@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
 import StyledButton from '../../components/styled/styled-button';
-import UnderConstruction from "../../components/utils/under-construction";
 
 export default () => {
 
@@ -30,7 +29,7 @@ export default () => {
 
     return(
 
-        <>{/*
+        <>
             <FeatureSupport
             support={supported}
             feature={"Vibration API"}
@@ -46,8 +45,7 @@ export default () => {
                     <StyledButton onClick={manageVibration}>{ start ? 'Stop Vibration' : 'Start Vibration'}</StyledButton>
                 </div>
             }
-            */}
-            <UnderConstruction />
+            
         </>
         
     )

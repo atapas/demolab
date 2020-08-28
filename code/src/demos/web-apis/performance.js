@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
 import _ from 'lodash';
-import UnderConstruction from '../../components/utils/under-construction';
+
 const pretty = require('prettysize');
 var moment = require('moment');
 
@@ -31,7 +31,7 @@ export default () => {
 
     return(
         <>
-        {/*
+        
             <FeatureSupport
                 support={supported}
                 feature={"Performance"}
@@ -70,8 +70,7 @@ export default () => {
                     }
                 </div>
             </div>
-            */}
-            <UnderConstruction />
+           
         </>
     )
 }

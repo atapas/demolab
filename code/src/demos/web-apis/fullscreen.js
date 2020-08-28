@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import FeatureSupport from "../../components/utils/feature-support";
 import StyledButton from '../../components/styled/styled-button';
-import UnderConstruction from '../../components/utils/under-construction';
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -35,7 +34,7 @@ export default () => {
 
     return(
         <>
-        {/*
+     
             <FeatureSupport
                 support={supported}
                 feature={"Fullscreen API"}
@@ -52,8 +51,7 @@ export default () => {
                     <StyledButton onClick={manageFullscreen}>Enter Fullscreen with Santa</StyledButton>
                 </div>
             }
-            */}
-            <UnderConstruction />
+           
         </>
         
     )
