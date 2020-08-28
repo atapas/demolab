@@ -9,7 +9,7 @@ import { GlobalStyles } from "../../theme/globalStyles";
 
 const Container = styled.div`
   max-width: 90%;
-  margin: 1rem 1.5rem auto 1.5rem;
+  margin: 1rem auto auto auto;
 `;
 
 export default function Layout({ children }) {
