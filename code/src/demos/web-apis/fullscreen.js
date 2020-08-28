@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import FeatureSupport from "../../components/utils/feature-support";
+import UnderConstruction from '../../components/utils/under-construction';
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -34,6 +35,7 @@ export default () => {
 
     return(
         <>
+        {/*
             <FeatureSupport
                 support={supported}
                 feature={"Fullscreen API"}
@@ -50,6 +52,8 @@ export default () => {
                     <Button onClick={manageFullscreen}>Enter Fullscreen with Santa</Button>
                 </div>
             }
+            */}
+            <UnderConstruction />
         </>
         
     )

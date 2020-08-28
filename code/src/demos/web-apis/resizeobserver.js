@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FeatureSupport from "../../components/utils/feature-support";
+import UnderConstruction from "../../components/utils/under-construction";
 
 export default () => {
     const [supported, setSupported] = useState(false);
@@ -14,14 +14,7 @@ export default () => {
 
 
     return(
-        <>
-            <FeatureSupport
-                support={supported}
-                feature={"ResizeObserver"}
-                caniuseLink={"https://caniuse.com/#feat=mdn-api_resizeobserver"}
-            />
-
-        </>
+        <UnderConstruction />
         
     )
 }

@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import _ from 'lodash';
 import FeatureSupport from "../../components/utils/feature-support";
+import UnderConstruction from '../../components/utils/under-construction';
 
 const CopyForm = () => {
     const [copyText, setCopytext] = useState();
@@ -85,6 +86,7 @@ export default () => {
     },[]);
     return (
         <>
+        {/*
             <FeatureSupport
                 support={supported}
                 feature={"Clipboard Async API"}
@@ -97,6 +99,8 @@ export default () => {
                     <PasteForm />
                 </div>
             }
+            */}
+            <UnderConstruction />
         </>
     )
 }

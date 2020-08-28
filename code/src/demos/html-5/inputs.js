@@ -3,6 +3,6 @@ import UnderConstruction from '../../components/utils/under-construction';
 
 export default () => {
     return(
-        <UnderConstruction />
+       <UnderConstruction />
     )
 }
