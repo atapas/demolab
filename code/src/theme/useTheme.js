@@ -5,7 +5,7 @@ export const useTheme = () => {
     const [mountedComponent, setMountedComponent] = useState(false);
 
     const setMode = mode => {
-        window.localStorage.setItem('theme', mode)
+        localStorage.setItem('theme', mode)
         setTheme(mode)
     };
 
@@ -14,7 +14,7 @@ export const useTheme = () => {
     };
 
     useEffect(() => {
-        const localTheme = window.localStorage.getItem('theme');
+        const localTheme = localStorage.getItem('theme');
         localTheme && setTheme(localTheme);
         setMountedComponent(true);
     }, []);

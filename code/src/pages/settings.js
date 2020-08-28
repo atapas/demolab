@@ -12,8 +12,8 @@ const Settings = () => {
         <Layout>
             <SEO title="Settings" />
             <h1>Settings</h1>
+            <h2>What do you love (light or dark) ?</h2>
             <Toggle theme={theme} toggleTheme={themeToggler} />
-            
         </Layout>
     )
 };
