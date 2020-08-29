@@ -21,6 +21,13 @@ export default () => {
                         ...GatsbyImageSharpFixed
                     }
                 }
+            },
+            blog: file(relativePath: {eq: "greenroots.png"}) {
+                childImageSharp {
+                    fixed(width: 500) {
+                        ...GatsbyImageSharpFixed
+                    }
+                }
             }
           }
         `
@@ -42,6 +49,10 @@ export default () => {
                 {'  '}
                 <a href="https://tapasadhikary.com" target="_blank" rel="noreferrer">
                     <Img fixed={imageData.website.childImageSharp.fixed} alt="website" />
+                </a>
+                <br /><br />
+                <a href="https://blog.greenroots.info" target="_blank" rel="noreferrer">
+                    <Img fixed={imageData.blog.childImageSharp.fixed} alt="blog" />
                 </a>
             </section>
         </Layout>

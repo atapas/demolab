@@ -50,7 +50,7 @@ const PasteForm = () => {
         try {
           const text = await navigator.clipboard.readText();
           setPastetext(text);
-          console.log('Pasted content: ', text);
+          console.log(`${text} is written to the clipboard.`);
         } catch (err) {
           console.error('Failed to read clipboard contents: ', err);
         }
