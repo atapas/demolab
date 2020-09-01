@@ -15,21 +15,27 @@ export default () => {
         }
     },[]);
 
+    const colorText = (entry) => {
+        if (rangeValue >=minRange && rangeValue <=200) {
+            entry.target.style.color = 'green';
+        } else if (rangeValue >=201 && rangeValue <=400) {
+            entry.target.style.color = 'orange';
+        } else if (rangeValue >=401 && rangeValue <=maxRange) {
+            entry.target.style.color = 'red';
+        }
+    }
+
     useEffect(() => {
         try {
             let dumbBtn = document.getElementById('dumbBtnId');
+            let textarea = document.getElementById('dumbAreaId');
             var resizeObserver = new ResizeObserver(entries => {
                 for(const entry of entries) {
-                    if (rangeValue >=minRange && rangeValue <=200) {
-                        entry.target.style.color = 'green';
-                    } else if (rangeValue >=201 && rangeValue <=400) {
-                        entry.target.style.color = 'orange';
-                    } else if (rangeValue >=401 && rangeValue <=maxRange) {
-                        entry.target.style.color = 'red';
-                    }
+                    colorText(entry);
                 }
             });
             resizeObserver.observe(dumbBtn);
+            resizeObserver.observe(textarea);
         } catch(e) {
             setSupported(false);
             console.log(e);      
@@ -41,6 +47,9 @@ export default () => {
         setRangeValue(value);
         let dumbBtn = document.getElementById('dumbBtnId');
         dumbBtn.style.width = `${value}px`;
+
+        let dumbArea = document.getElementById('dumbAreaId');
+        dumbArea.style.width = `${value}px`;
     }
 
 
@@ -55,7 +64,8 @@ export default () => {
             </div>
             <span>{rangeValue}px</span>
             <br />
-            <StyledButton id="dumbBtnId">I am a Dumb Button</StyledButton>
+            <StyledButton id="dumbBtnId">I am a Dumb Button</StyledButton> <br />
+            <textarea id="dumbAreaId" width={rangeValue}>I am a dumb text area</textarea>
         </div>
         
     )
