@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import FeatureSupport from "../../components/utils/feature-support";
 
 export default function ImageCaptureDemo() {
   const [track, setTrack] = useState();
   const [enableCapture, setEnableCapture] = useState(false);
-  const [error, setError] = useState();
+  const [supported, setSupported] = useState(true);
 
   const getUserMedia = async () => {
     console.log('Getting User Media');
@@ -14,10 +15,11 @@ export default function ImageCaptureDemo() {
         const track = mediaStream.getVideoTracks()[0];
         setTrack(track);
         setEnableCapture(true);
+        setSupported(true);
       })
       .catch(error => {
         console.error(` ${error} is not yet supported`);
-        setError(error);
+        setSupported(false);
       });
   }
 
@@ -33,10 +35,11 @@ export default function ImageCaptureDemo() {
       .then(imageBitmap => {
         const canvas = document.querySelector('#grabFrameCanvas');
         drawCanvas(canvas, imageBitmap);
+        setSupported(true);
       })
       .catch(error => {
         console.log(error);
-        setError(error);
+        setSupported(false);
       });
   }
 
@@ -47,10 +50,11 @@ export default function ImageCaptureDemo() {
       .then(imageBitmap => {
         const canvas = document.querySelector('#takePhotoCanvas');
         drawCanvas(canvas, imageBitmap);
+        setSupported(true);
       })
       .catch(error => {
         console.log(error);
-        setError(error);
+        setSupported(false);
       });
   }
 
@@ -74,7 +78,12 @@ export default function ImageCaptureDemo() {
     
   return (
     <>
-      {error && <div>This feature is not supported yet.</div>}
+      <FeatureSupport
+          support={supported}
+          feature={"Image Capture API"}
+          caniuseLink={"https://caniuse.com/#feat=mdn-api_imagecapture"}
+      />
+      {supported && <div>This feature is not supported yet.</div>}
       <div style={{padding: '5px'}}>
         <Button 
           variant="success"
