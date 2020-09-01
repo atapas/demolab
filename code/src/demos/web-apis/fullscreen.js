@@ -44,7 +44,7 @@ export default () => {
             {
                 supported && 
                 <div className="column">
-                    <div id="fs_id">
+                    <div id="fs_id" style={{display:'flex', justifyContent:'center', padding:'50px'}}>
                         <Img fixed={imageData.image.childImageSharp.fixed} alt="santa" />
                     </div>
                     
