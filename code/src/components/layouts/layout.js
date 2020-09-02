@@ -1,10 +1,10 @@
 import React from "react";
-import { lightTheme, darkTheme } from '../../theme/theme';
 import Header from './header';
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
-
+import _ from 'lodash';
 import { GlobalStyles } from "../../theme/globalStyles";
+import { lightTheme } from "../../theme/theme";
 
 
 const Container = styled.div`
@@ -26,7 +26,8 @@ export default function Layout({ children }) {
   );
 
   const localTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme');
-  const themeMode = (!localTheme || localTheme === 'light') ? lightTheme : darkTheme;
+
+  const themeMode = _.isNull(localTheme) ? lightTheme : JSON.parse(localTheme);
 
   return (
     <ThemeProvider theme={ themeMode }>
