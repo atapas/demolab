@@ -8,6 +8,10 @@
                 "button": {
                     "text": "#FFFFFF",
                     "background": "#000000"
+                },
+                "link": {
+                    "text": "teal",
+                    "opacity": 1
                 }
             }
         },
@@ -19,6 +23,10 @@
                 "button": {
                     "text": "#000000",
                     "background": "#FFFFFF"
+                },
+                "link": {
+                    "text": "teal",
+                    "opacity": 1
                 }
             }
         },
@@ -30,6 +38,10 @@
                 "button": {
                     "text": "#6a1b9a",
                     "background": "#ebdbf5"
+                },
+                "link": {
+                    "text": "#ebdbf5",
+                    "opacity": 0.8
                 }
             }
         },
@@ -41,6 +53,10 @@
                 "button": {
                     "text": "#FFFFFF",
                     "background": "#292500"
+                },
+                "link": {
+                    "text": "#292500",
+                    "opacity": 0.8
                 }
             }
         },
@@ -52,17 +68,25 @@
                 "button": {
                     "text": "#FFFFFF",
                     "background": "#002b24"
+                },
+                "link": {
+                    "text": "#002b24",
+                    "opacity": 0.8
                 }
             }
         },
         "cherryBonBon" : {
-            "name": "Cherry Bon Bbon",
+            "name": "Cherry Bon Bon",
             "colors": {
                 "body": "#c62828",
                 "text": "#ffeeed",
                 "button": {
                     "text": "#c62828",
                     "background": "#ffeeed"
+                },
+                "link": {
+                    "text": "#ffeeed",
+                    "opacity": 0.8
                 }
             }
         },
@@ -74,6 +98,10 @@
                 "button": {
                     "text": "#ffffff",
                     "background": "#0d47a1"
+                },
+                "link": {
+                    "text": "#0d47a1",
+                    "opacity": 0.8
                 }
             }
         }

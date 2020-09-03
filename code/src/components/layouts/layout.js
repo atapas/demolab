@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import _ from 'lodash';
 import { GlobalStyles } from "../../theme/globalStyles";
-import * as themesFromStore from '../theme/theme.json';
+import * as themesFromStore from '../../theme/theme.json';
 
 
 const Container = styled.div`
