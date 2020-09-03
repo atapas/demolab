@@ -1,0 +1,81 @@
+{
+    "data" : {
+        "light" : {
+            "name": "Light",
+            "colors": {
+                "body": "#FFFFFF",
+                "text": "#000000",
+                "button": {
+                    "text": "#FFFFFF",
+                    "background": "#000000"
+                }
+            }
+        },
+        "dark" : {
+            "name": "Dark",
+            "colors": {
+                "body": "#000000",
+                "text": "#FFFFFF",
+                "button": {
+                    "text": "#000000",
+                    "background": "#FFFFFF"
+                }
+            }
+        },
+        "material" : {
+            "name": "Material",
+            "colors": {
+                "body": "#6a1b9a",
+                "text": "#ebdbf5",
+                "button": {
+                    "text": "#6a1b9a",
+                    "background": "#ebdbf5"
+                }
+            }
+        },
+        "sharp" : {
+            "name": "Sharp",
+            "colors": {
+                "body": "#ffeb3b",
+                "text": "#292500",
+                "button": {
+                    "text": "#FFFFFF",
+                    "background": "#292500"
+                }
+            }
+        },
+        "calm" : {
+            "name": "Clam",
+            "colors": {
+                "body": "#80cbc4",
+                "text": "#002b24",
+                "button": {
+                    "text": "#FFFFFF",
+                    "background": "#002b24"
+                }
+            }
+        },
+        "cherryBonBon" : {
+            "name": "Cherry Bon Bbon",
+            "colors": {
+                "body": "#c62828",
+                "text": "#ffeeed",
+                "button": {
+                    "text": "#c62828",
+                    "background": "#ffeeed"
+                }
+            }
+        },
+        "seaWave" : {
+            "name": "Sea Wave",
+            "colors": {
+                "body": "#9be7ff",
+                "text": "#0d47a1",
+                "button": {
+                    "text": "#ffffff",
+                    "background": "#0d47a1"
+                }
+            }
+        }
+    }
+}

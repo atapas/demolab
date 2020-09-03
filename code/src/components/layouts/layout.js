@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import _ from 'lodash';
 import { GlobalStyles } from "../../theme/globalStyles";
-import { lightTheme } from "../../theme/theme";
+import * as themesFromStore from '../theme/theme.json';
 
 
 const Container = styled.div`
@@ -27,7 +27,7 @@ export default function Layout({ children }) {
 
   const localTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme');
 
-  const themeMode = _.isNull(localTheme) ? lightTheme : JSON.parse(localTheme);
+  const themeMode = _.isNull(localTheme) ? themesFromStore.data.light : JSON.parse(localTheme);
 
   return (
     <ThemeProvider theme={ themeMode }>
