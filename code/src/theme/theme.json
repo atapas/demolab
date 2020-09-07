@@ -13,7 +13,8 @@
                     "text": "teal",
                     "opacity": 1
                 }
-            }
+            },
+            "font": "Gayathri"
         },
         "dark" : {
             "name": "Dark",
@@ -28,7 +29,8 @@
                     "text": "teal",
                     "opacity": 1
                 }
-            }
+            },
+            "font": "Roboto"
         },
         "material" : {
             "name": "Material",
@@ -43,7 +45,8 @@
                     "text": "#ebdbf5",
                     "opacity": 0.8
                 }
-            }
+            },
+            "font": "Abel"
         },
         "sharp" : {
             "name": "Sharp",
@@ -58,7 +61,8 @@
                     "text": "#292500",
                     "opacity": 0.8
                 }
-            }
+            },
+            "font": "Kufam"
         },
         "calm" : {
             "name": "Clam",
@@ -73,7 +77,8 @@
                     "text": "#002b24",
                     "opacity": 0.8
                 }
-            }
+            },
+            "font": "Nunito Sans"
         },
         "cherryBonBon" : {
             "name": "Cherry Bon Bon",
@@ -88,7 +93,8 @@
                     "text": "#ffeeed",
                     "opacity": 0.8
                 }
-            }
+            },
+            "font": "Istok Web"
         },
         "seaWave" : {
             "name": "Sea Wave",
@@ -103,7 +109,8 @@
                     "text": "#0d47a1",
                     "opacity": 0.8
                 }
-            }
+            },
+            "font": "Chilanka"
         }
     }
 }

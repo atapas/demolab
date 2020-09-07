@@ -43,7 +43,8 @@
     "shortid": "^2.2.15",
     "styled-components": "^5.1.1",
     "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19"
+    "typography-theme-fairy-gates": "^0.16.19",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "prettier": "2.0.5"

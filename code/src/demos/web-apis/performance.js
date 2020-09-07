@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
-import _ from 'lodash';
-
-const pretty = require('prettysize');
-var moment = require('moment');
-
 
 export default () => {
     const pretty = require('prettysize');

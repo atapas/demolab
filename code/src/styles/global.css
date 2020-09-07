@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap");
+@font-face {
+    font-family: "Chilanka";
+    src: url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 
 li {
     list-style: none;
