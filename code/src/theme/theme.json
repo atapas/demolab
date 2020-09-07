@@ -14,7 +14,7 @@
                     "opacity": 1
                 }
             },
-            "font": "Gayathri"
+            "font": "Tinos"
         },
         "dark" : {
             "name": "Dark",
@@ -65,7 +65,7 @@
             "font": "Kufam"
         },
         "calm" : {
-            "name": "Clam",
+            "name": "Calm",
             "colors": {
                 "body": "#80cbc4",
                 "text": "#002b24",
