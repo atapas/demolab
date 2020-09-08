@@ -32,7 +32,15 @@ export default function Layout({ children }) {
   const [font,setFont] = useState(themeMode.font);
 
  useEffect(() => {
-      setFont(themeMode.font);
+    WebFont.load({
+      google: {
+        families: _.values(themesFromStore.data).map((elem) => {
+          return elem.font;
+        })
+      },
+      fontinactive: function(familyName, fvd) {setFont('Chilanka')},
+      active: function() {setFont(themeMode.font)}
+    });
   });
   
 

@@ -41,14 +41,14 @@ export default (props) => {
     useEffect(() => {
         WebFont.load({
           google: {
-            families: ['Roboto', 'Chilanka', 'Nunito Sans', 'Istok Web', 'Abel', 'Tinos', 'Kufam']
+            families: _.values(data).map((elem) => {
+                return elem.font;
+            })
           }
         });
     });
 
     const ThemeCard = props => {
-        console.log(props.theme);
-        console.log('data', data);
         return(
             <Wrapper style={{backgroundColor: `${data[_.camelCase(props.theme.name)].colors.body}`, 
                     color: `${data[_.camelCase(props.theme.name)].colors.text}`, 
