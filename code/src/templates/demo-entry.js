@@ -13,24 +13,26 @@ import demoEntryStyles from "./demo-entry.module.css";
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 
+import StyledButton from '../components/styled/styled-button';
+
 export default function APIDemo({ data }) {
   console.log(data)
   const links = data.markdownRemark.frontmatter.links;
   const title = data.markdownRemark.frontmatter.title;
   const codeEmbedLink = data.markdownRemark.frontmatter['code_embed_link'];
+  const demoLink = data.markdownRemark.frontmatter['fileName'];
   const category = data.markdownRemark.frontmatter.category;
   const disqusConfig = {
     shortname: "greenroots",
     config: { identifier: shortid.generate(), title },
   };
   const [demo, setDemo] = useState([]);
-  const [hideCodeTab, setHideCodeTab] = useState(true);
-  const [showDemoTab, setShowDemoTab] = useState(true);
-  const [defaultTabKey, setDefaultTabKey] = useState('demo');
-
-  console.log(isMobileOnly, isTablet);
+  const [showCodeBtn, setShowCodeBtn] = useState(true);
+ 
   const shouldHideCodeTab =
     _.isUndefined(codeEmbedLink) || _.isNull(codeEmbedLink) || (isMobileOnly && !isTablet);
+  const shouldHideDemoTab =
+    _.isUndefined(demoLink) || _.isNull(demoLink);
 
   const addComponent = async file => {
     console.log(`Loading ${file} component...`)
@@ -38,12 +40,10 @@ export default function APIDemo({ data }) {
     import(`../demos/${demoFolder}/${file}.js`)
       .then(component => {
         let temp = []
-        temp.push(component.default)
-        setDemo(temp)
-        setShowDemoTab(true);
+        temp.push(component.default);
+        setDemo(temp);
       })
       .catch(error => {
-        setShowDemoTab(false);
         console.error(`"${file}" is not loaded successfully due to the ${error}`);
       })
   }
@@ -53,22 +53,19 @@ export default function APIDemo({ data }) {
       const fileName = data.markdownRemark.frontmatter.fileName
       await addComponent(fileName)
     }
-    fetchAPIDemo();
+
+    !shouldHideDemoTab && fetchAPIDemo();
   }, []);
 
-  useEffect(() => {
-    shouldHideCodeTab ? setHideCodeTab(true) : setHideCodeTab(false);
-  }, [shouldHideCodeTab]);
-
-  useEffect(() => {
-    if (showDemoTab) {
-      setDefaultTabKey('demo');
-    } else if (!hideCodeTab) {
-      setDefaultTabKey('scode');
+  const getDefaultTabKey = () => {
+    if (!shouldHideDemoTab) {
+      return "demo";
+    } else if (!shouldHideCodeTab) {
+      return "scode";
     } else {
-      setDefaultTabKey('read');
+      return "read";
     }
-  }, [showDemoTab, hideCodeTab]);
+  }
 
   const getDescription = () => {
     return { __html: data.markdownRemark.html }
@@ -84,27 +81,21 @@ export default function APIDemo({ data }) {
     }
     return link
   }
-
+  
   const showCode = () => {
-      console.log('Show Code');
-      sdk.embedProjectId(
-        "codeEmbed",
-        codeEmbedLink,
-        {
-            clickToLoad: true,
-            openFile: 'index.js',
-            view: 'editor',
-            height: 500,
-            hideExplorer: true,
-            hideNavigation: true,
-        }
-      )
-  }
-
-  const manageTab = key => {
-      if (key === 'scode') {
-          showCode();
+    setShowCodeBtn(false);
+    sdk.embedProjectId(
+      "codeEmbed",
+      codeEmbedLink,
+      {
+          clickToLoad: true,
+          openFile: 'index.js',
+          view: 'editor',
+          height: 500,
+          hideExplorer: true,
+          hideNavigation: true,
       }
+    )
   }
 
   return (
@@ -114,12 +105,11 @@ export default function APIDemo({ data }) {
       <div dangerouslySetInnerHTML={getDescription()} />
 
       <Tabs
-        defaultActiveKey={defaultTabKey}
+        defaultActiveKey={getDefaultTabKey()}
         id="demo-entry-tab"
-        onSelect={k => manageTab(k)}
       >
         {
-          showDemoTab &&
+          !shouldHideDemoTab &&
           <Tab eventKey="demo" title="Demo" style={{ padding: "10px" }}>
             <div>
               {demo.length > 0 &&
@@ -128,9 +118,18 @@ export default function APIDemo({ data }) {
           </Tab>
         }
         { 
-          !hideCodeTab && 
+          !shouldHideCodeTab && 
           <Tab eventKey="scode" title="Source Code" style={{ padding: "10px" }}>
-            <div className="row" id="codeEmbed"></div>
+            <div className="column">
+              {
+                showCodeBtn && 
+                <StyledButton 
+                  onClick={showCode}>
+                  Click to Load the Source Code
+                </StyledButton>
+              }
+              <div id="codeEmbed"></div>
+            </div>
           </Tab>
         }
         <Tab eventKey="read" title="Important Links" style={{ padding: "10px" }}>

@@ -17,7 +17,8 @@ const emojis = {
   "network": '📶',
   "stopwatch": '⏱️',
   "face-with-monocle": '🧐',
-  "bluetooth": '🤙'
+  "bluetooth": '🤙',
+  "input-symbols": '🔣'
 }
 
 const Emoji = props => (
