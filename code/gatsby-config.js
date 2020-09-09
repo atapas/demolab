@@ -26,6 +26,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://demo.greenroots.info/` // required!
+      }
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         cssLoaderOptions: {
