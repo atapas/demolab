@@ -24,7 +24,7 @@ export default () => {
             },
             blog: file(relativePath: {eq: "greenroots.png"}) {
                 childImageSharp {
-                    fixed(width: 500) {
+                    fixed(width: 420) {
                         ...GatsbyImageSharpFixed
                     }
                 }
