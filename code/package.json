@@ -16,6 +16,7 @@
   "dependencies": {
     "@stackblitz/sdk": "^1.5.0",
     "@weknow/react-bubble-chart-d3": "^1.0.12",
+    "babel-plugin-styled-components": "^1.11.1",
     "bootstrap": "^4.5.0",
     "disqus-react": "^1.0.9",
     "gatsby": "^2.23.12",
@@ -24,7 +25,9 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-plugin-typography": "^2.5.10",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-remark": "^2.8.27",
     "gatsby-transformer-sharp": "^2.5.13",
@@ -41,10 +44,9 @@
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
     "shortid": "^2.2.15",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.0",
     "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
-    "webfontloader": "^1.6.28"
+    "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "2.0.5"

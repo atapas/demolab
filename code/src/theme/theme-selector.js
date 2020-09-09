@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import _ from 'lodash';
 import shortid from 'shortid';
-import WebFont from 'webfontloader';
 import * as themesFromStore from '../theme/theme.json';
 
 const ThemedButton = styled.button`
@@ -37,16 +36,6 @@ export default (props) => {
     useEffect(() => {
         setThemes(_.keys(data));
     }, []);
-
-    useEffect(() => {
-        WebFont.load({
-          google: {
-            families: _.values(data).map((elem) => {
-                return elem.font;
-            })
-          }
-        });
-    });
 
     const ThemeCard = props => {
         return(
