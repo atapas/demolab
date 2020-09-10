@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layouts/layout";
 import SEO from '../components/seo';
-
-import Toggle from '../theme/Toggler';
-import { useTheme } from "../theme/useTheme";
-
+import StyledButton from '../components/styled/styled-button';
+import ThemeSelector from '../theme/theme-selector';
 
 const Settings = () => {
-    const [theme, themeToggler] = useTheme();
+    const [theme, setTheme] = useState();
+ 
+    const themeToggler = (selectedTheme) => {
+        typeof window !== 'undefined' && window.localStorage.setItem('theme', JSON.stringify(selectedTheme))
+        setTheme(selectedTheme)
+    };
+
+
+    useEffect(() => {
+        const localTheme = typeof window !== 'undefined' && window.localStorage.getItem('theme');
+        localTheme && setTheme(localTheme);
+    }, []);
+
     return(
         <Layout>
             <SEO title="Settings" />
             <h1>Settings</h1>
-            <h2>What do you love (light or dark) ?</h2>
-            <Toggle theme={theme} toggleTheme={themeToggler} />
+            <ThemeSelector setter={ themeToggler }/>
         </Layout>
     )
 };
