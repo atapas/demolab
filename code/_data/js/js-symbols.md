@@ -16,6 +16,7 @@ links:
   - "Symbols in Metaprogramming$#$#$#https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/"
   - "JS Symbols from Exploring JS$#$#$#https://exploringjs.com/es6/ch_symbols.html"
   - "Detailed overview of Well-Known Symbols$#$#$#https://dmitripavlutin.com/detailed-overview-of-well-known-symbols"
+  - "Explain Me Like I am Five: What are ES6 Symbols?$#$#$#https://blog.greenroots.info/explain-me-like-i-am-five-what-are-es6-symbols-ckeuz5sb8001qafs14of305dw"
 ---
 `Symbol` is a primitive type(not an object) included in the ECMAScript 2015(aka, ES6). We are already familiar with the existing primitive types like, `Number`, `String` and, `Boolean`. Like these primitive types, Symbols are also created via a factory function.
 
