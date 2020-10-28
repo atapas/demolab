@@ -8,3 +8,8 @@ Demolab is my fantasy project created to understand the power of `JAMstack` usin
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/90f59874-d920-4104-87fa-0bc5d1531bf4/deploy-status)](https://app.netlify.com/sites/demolab/deploys)
+
+# Many Thanks to all the `Stargazers` who has supported this project with stars(⭐)
+
+[![Stargazers repo roster for @atapas/demolab](https://reporoster.com/stars/atapas/demolab)](https://github.com/atapas/demolab/stargazers)
+
