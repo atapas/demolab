@@ -75,23 +75,19 @@ const SetTimeoutDemo = () => {
     },[counter]);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-           let currCount = countRef.current;
-           setCounter(currCount => currCount + 1);
-           console.log(countRef.current);
-           setScheduleMessage(`Executed. Counter value: ${countRef.current}`);
-        }, 2000);
-        return () => clearTimeout(timer);
+        const timerId = schedule();
+        return () => clearTimeout(timerId);
     }, []);
 
     const schedule = () => {
         setScheduleMessage('Scheduled in 2s...');
-        setTimeout(() => {
+        const timerId = setTimeout(() => {
             let currCount = countRef.current;
             setCounter(currCount => currCount + 1);
             console.log(counter);
-            setScheduleMessage(`Executed. Counter value: ${countRef.current}`);
         }, 2000);
+
+        return timerId;
     }
 
     return(
