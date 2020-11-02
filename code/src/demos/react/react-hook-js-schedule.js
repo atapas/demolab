@@ -6,19 +6,25 @@ import style from './react-hook-js-schedule.module.css';
 const SetIntervalDemo = () => {
     const [realTime, setRealTime] = useState(false);
     const [counter, setCounter] = useState(0);
+        
     const countRef = useRef(counter);
     countRef.current = counter;
-    
+
     const manageRealTime = () => {
         setRealTime(!realTime);
+    }
+
+    const reset = () => {
+        setCounter(0);
     }
 
     useEffect(() => {
         let interval;
         if (realTime) {
             interval = setInterval(() => {
-                setCounter(countRef.current + 1);
-                console.log('In setInterval', countRef.current);
+                let currCount = countRef.current;
+                setCounter(currCount => currCount + 1);
+                console.log('In setInterval', currCount, counter);
             }, 1000);
         } else {
             clearInterval(interval);
@@ -28,13 +34,23 @@ const SetIntervalDemo = () => {
 
     return(
         <div className={style.demo}>
-            <h2>setInterval Demo</h2>
-            <Button 
-                className={style.btnSpacing}
-                variant={realTime? 'danger' : 'success'} 
-                onClick={() => manageRealTime()}>
-                    {realTime ? 'Stop Real-Time': 'Start Real-Time'}
-            </Button>
+            <h3>Realtime Counter</h3>
+            <h6>setInterVal(), clearInterVal() and reactjs</h6>
+            <hr />
+            <div className={style.btnGrpSpacing}>
+                <Button
+                    className={style.btnSpacing} 
+                    variant={realTime? 'danger' : 'success'} 
+                    onClick={() => manageRealTime()}>
+                        {realTime ? 'Stop Real-Time': 'Start Real-Time'}
+                </Button>
+                <Button 
+                    className={style.btnSpacing} 
+                    variant= 'info'
+                    onClick={() => reset()}>
+                        Reset Counter
+                </Button>
+            </div>
             <div className={style.radial}>
                 <span>{counter}</span>
             </div>
@@ -43,30 +59,60 @@ const SetIntervalDemo = () => {
 }
 
 const SetTimeoutDemo = () => {
+    const [scheduleMessage, setScheduleMessage] = useState('Scheduled in 2s...');
+    const [counter, setCounter] = useState(0);
+    
+    const countRef = useRef(counter);
+    countRef.current = counter;
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            console.log('setTimeout called!');
-        }, 1000);
-        
+           let currCount = countRef.current;
+           setCounter(currCount => currCount + 1);
+           console.log(countRef.current);
+           setScheduleMessage(`Executed. Counter value: ${countRef.current}`);
+        }, 2000);
         return () => clearTimeout(timer);
     }, []);
 
     const schedule = () => {
+        setScheduleMessage('Scheduled in 2s...');
         setTimeout(() => {
-            console.log('setTimeout called!');
-        }, 1000);
+            let currCount = countRef.current;
+            setCounter(currCount => currCount + 1);
+            console.log(counter);
+            setScheduleMessage(`Executed. Counter value: ${countRef.current}`);
+        }, 2000);
+    }
+
+    const now = () => {
+        setCounter(counter => counter + 1);
+        console.log(counter);
+        setScheduleMessage(`Executed. Counter value: ${counter}`);
     }
 
     return(
         <div className={style.demo}>
-            <h2>setTimeout Demo</h2>
-            <Button 
-                className={style.btnSpacing}
-                variant='info'
-                onClick={() => schedule()}>
-                    Schedule Once
-            </Button>
+            <h3>Task Scheduler</h3>
+            <h6>setTimeout(), clearTimeout() and reactjs</h6>
+            <hr />
+            <div className={style.btnGrpSpacing}>
+                <Button
+                    className={style.btnSpacing} 
+                    variant='info'
+                    onClick={() => schedule()}>
+                        Schedule Again
+                </Button>
+                <Button
+                    className={style.btnSpacing} 
+                    variant='info'
+                    onClick={() => now()}>
+                        Execute Now
+                </Button>
+            </div>
+            <div className={style.output}>
+                <span>{scheduleMessage}</span> {'  '}
+            </div>
         </div>    
     )
 }

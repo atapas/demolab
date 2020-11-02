@@ -9,6 +9,10 @@ a {
     background-image: none;
 }
 
+HR {
+    border-color: #8a0e53d1;
+}
+
 circle {
     cursor: pointer;
 }
