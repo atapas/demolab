@@ -1,0 +1,36 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px 0 20px 0;
+}
+
+.demo {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+}
+
+.radial {
+    border: 2px solid #258b8f;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.output {
+    border: 2px solid #258b8f;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.btnGrpSpacing {
+    margin: 5px 0px 15px 5px;
+}
+
+.btnSpacing {
+    margin: 2px;
+}
