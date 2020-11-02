@@ -35,7 +35,7 @@ const SetIntervalDemo = () => {
     return(
         <div className={style.demo}>
             <h3>Realtime Counter</h3>
-            <h6>setInterVal(), clearInterVal() and reactjs</h6>
+            <h6>setInterval(), clearInterval() and reactjs</h6>
             <hr />
             <div className={style.btnGrpSpacing}>
                 <Button
