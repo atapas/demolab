@@ -1,0 +1,30 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.demo {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+}
+
+.radial {
+    margin: 15px 5px 5px 35%;
+    border: 2px solid #258b8f;
+    border-radius: 35px;
+    width: 60px;
+    height: 58px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.btnSpacing {
+    margin: 5px 0px 5px 22%;
+}
