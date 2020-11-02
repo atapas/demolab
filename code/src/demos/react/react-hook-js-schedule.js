@@ -65,6 +65,15 @@ const SetTimeoutDemo = () => {
     const countRef = useRef(counter);
     countRef.current = counter;
 
+    const reset = () => {
+        setCounter(0);
+        
+    }
+
+    useEffect(() => {
+        setScheduleMessage(`Executed. Counter value: ${counter}`);
+    },[counter]);
+
     useEffect(() => {
         const timer = setTimeout(() => {
            let currCount = countRef.current;
@@ -85,12 +94,6 @@ const SetTimeoutDemo = () => {
         }, 2000);
     }
 
-    const now = () => {
-        setCounter(counter => counter + 1);
-        console.log(counter);
-        setScheduleMessage(`Executed. Counter value: ${counter}`);
-    }
-
     return(
         <div className={style.demo}>
             <h3>Task Scheduler</h3>
@@ -99,15 +102,15 @@ const SetTimeoutDemo = () => {
             <div className={style.btnGrpSpacing}>
                 <Button
                     className={style.btnSpacing} 
-                    variant='info'
+                    variant='success'
                     onClick={() => schedule()}>
                         Schedule Again
                 </Button>
                 <Button
                     className={style.btnSpacing} 
                     variant='info'
-                    onClick={() => now()}>
-                        Execute Now
+                    onClick={() => reset()}>
+                        Reset Counter
                 </Button>
             </div>
             <div className={style.output}>
