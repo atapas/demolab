@@ -34,3 +34,8 @@ circle {
 .container {
     padding: 0
 }
+
+.__json-pretty__ {
+    padding: 3px;
+    border-radius: 4px;
+}

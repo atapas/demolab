@@ -12,24 +12,62 @@ const Preview = props => {
 
     return(
         <div>
+          <h2>Preview</h2>
+          <p>
+            This section changes as you change the input element values in the form. See 
+            how the JSON is being formed based on the changes. We are grabbing the same JSON 
+            data and applying to create some meaningful User Interfaces as well.
+          </p>
           <JSONPretty id="json-pretty" data={data}></JSONPretty>
-          { 
-            data.fullName && (
-              <h2>Hey <u>{data.fullName}!</u> Welcome to this Demo.</h2>
-            )
-          }
+          <div>
+            { 
+              data.fullName && (
+                <h2>Hey <u>{data.fullName}!</u> Welcome to this Demo.</h2>
+              )
+            }
 
-          { 
-            data.email && (
-              <p>Thanks for giving us your email id: <a>{data.email}</a></p>
-            )
-          }
+            { 
+              data.email && (
+                <p>Thanks for giving us your email id: <a href={data.email}>{data.email}</a></p>
+              )
+            }
 
-          {
-            data.address && (
-              <p>You stay at, {data.address}</p>
-            )
-          }
+            {
+              data.color && (
+                <p>Do you know, the Hexacode of your <span style={{color:data.color}}>Favorite Color is: {data.color}</span></p>
+              )
+            }
+
+            {
+              data.address && (
+                <span>You stay at, {data.address}</span>
+              )
+            }
+
+            {
+              data.city && (
+                <span> {' , '} {data.city}</span>
+              )
+            }
+
+            {
+              data.state && (
+                <span>{' , '} {data.state}</span>
+              )
+            }
+
+            {
+              data.zip && (
+                <span>{' , '} {data.zip}</span>
+              )
+            }
+
+            {
+              data.checkMe && (
+                <p>I just Checked You Out!</p>
+              )
+            }
+          </div>
         </div>    
     )
 }
@@ -44,13 +82,14 @@ export default () => {
     city: "",
     state: "",
     zip: "",
-    checkMe: ""
+    checkMe: false
   }
 
   const [state, setState] = useState(defaultObj)
 
   const handleChange = evt => {
-    const value = evt.target.value
+    const value =
+    evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
     setState({
       ...state,
       [evt.target.name]: value
@@ -78,14 +117,14 @@ export default () => {
               </Form.Group>
             </Form.Row>
 
-            <Form.Group controlId="formGridAddress">
-              <Form.Label>Address</Form.Label>
-              <Form.Control as="textarea" rows={3} name="address"  onChange={handleChange} placeholder="Where can we find you?" autoComplete="nope"/>
-            </Form.Group>
-
             <Form.Group controlId="favColor">
               <Form.Label>Your Favorite Color</Form.Label>
               <Form.Control type="color" name="color" onChange={handleChange} autoComplete="nope"/>
+            </Form.Group>
+
+            <Form.Group controlId="formGridAddress">
+              <Form.Label>Address</Form.Label>
+              <Form.Control as="textarea" rows={3} name="address"  onChange={handleChange} placeholder="Where can we find you?" autoComplete="nope"/>
             </Form.Group>
 
             <Form.Row>
@@ -111,12 +150,8 @@ export default () => {
             </Form.Row>
 
             <Form.Group id="formGridCheckbox">
-              <Form.Check type="checkbox" label="Check me out" name="checkMe" onChange={handleChange}/>
+              <Form.Check type="checkbox" label="Check me out" checked={state.checkMe} name="checkMe" onChange={handleChange}/>
             </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
           </Form>
         </Col>
         <Col>
