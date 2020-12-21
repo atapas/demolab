@@ -1,5 +1,5 @@
 ---
-title: "Handle Multiple Input Value Changes in React"
+title: "Handle Input Value Changes with Single Change Handler in React"
 emoji: "keyboard"
 date: "2020-12-19"
 category:
@@ -13,4 +13,4 @@ tags:
   - "#input"
 fileName: "react-multiple-input-changes"
 ---
-ReactJS form may contain one of more Input elements. Input elements are, textbox, textarea, radio, select, checkbox, etc. This example shows, how to handle all the input value changes with a centralized handler function.
+ReactJS form may contain one or more Input elements. Input elements are, textbox, textarea, radio, select, checkbox, etc. This example shows, how to handle all the input value changes with a single, centralized handler function.
