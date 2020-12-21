@@ -1,33 +1,20 @@
 import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
-import _ from 'lodash';
 
 const pretty = require('prettysize');
-var moment = require('moment');
-
 
 export default () => {
-    const pretty = require('prettysize');
     const [supported, setSupported] = useState(false);
     const [memoryData, setMemoryData] = useState();
-    const [navigationData, setNavigationData] = useState();
     
     useEffect(() => {
         if (performance) {
             setSupported(true);
             setMemoryData(performance.memory);
-            setNavigationData(performance.getEntriesByType("navigation"));
         } else {
             setSupported(false);
         }
     },[]);
-
-
-    const renderNavogationInfo = () => {
-        if (supported) {
-            console.log(navigationData[0]);
-        }
-    }
 
     return(
         <>

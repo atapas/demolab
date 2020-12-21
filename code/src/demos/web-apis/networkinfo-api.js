@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import FeatureSupport from "../../components/utils/feature-support";
 import Emoji from '../../components/utils/emoji';
 
-import demoStyles from '../demo.module.css';
-
 export default () => {
     const [supported, setSupported] = useState(false);
     const [information, setInformation] = useState();
