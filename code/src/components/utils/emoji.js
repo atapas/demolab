@@ -19,7 +19,9 @@ const emojis = {
   "face-with-monocle": '🧐',
   "bluetooth": '🤙',
   "input-symbols": '🔣',
-  "postbox": '📮'
+  "postbox": '📮',
+  "princess": '👸',
+  "cat": '🐈'
 }
 
 const Emoji = props => (

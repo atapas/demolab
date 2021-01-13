@@ -32,9 +32,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 color
                 image
                 name
-                hide
               }
               date
+              demoURL
               fileName
               links
               code_embed_link

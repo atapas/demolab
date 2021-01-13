@@ -10,7 +10,7 @@ category:
 tags:
   - "#notification"
   - "#timeline"
-fileName: "notification-timeline"
+demoURL: "https://notify-timeline.netlify.app/"
 links: 
   - "GreenRoots Blog$#$#$#https://blog.greenroots.info/a-notification-timeline-using-react-ckdb6o0yp00wy59s16les9bjn"
 ---
