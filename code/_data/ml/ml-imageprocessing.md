@@ -6,7 +6,7 @@ category:
   name: ML
   desc: All about Machine Learning
   image: /assets/need_prep.gif
-  color: rgb(47, 60, 234)
+  color: rgba(0,123,255,.5)
 tags:
   - "#ml"
   - "#machine learning"
