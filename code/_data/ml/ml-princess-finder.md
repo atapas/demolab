@@ -11,7 +11,7 @@ tags:
   - "#ml"
   - "#machine learning"
   - "#AI"
-demoURL: "http://princess-finder.netlify.app/"
+demoURL: "https://princess-finder.netlify.app/"
 links: 
   - "Princess Finder using React, ml5.js, and Teachable Machine Learning$#$#$#https://blog.greenroots.info/princess-finder-using-react-ml5js-and-teachable-machine-learning-ckj8288ch03gew7s1ht1u3pmu"
   - "ml5.js - Friendly Machine Learning for the Web$#$#$#https://learn.ml5js.org/#/"
