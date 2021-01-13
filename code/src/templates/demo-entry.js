@@ -35,8 +35,8 @@ export default function APIDemo({ data }) {
     _.isUndefined(demoLink) || _.isNull(demoLink);
 
   const addComponent = async file => {
-    console.log(`Loading ${file} component...`)
-    const demoFolder = _.kebabCase(category.name)
+    console.log(`Loading ${file} component...`);
+    const demoFolder = _.startCase(_.camelCase(category.name)).replace(/ /g, '');
     import(`../demos/${demoFolder}/${file}.js`)
       .then(component => {
         let temp = []
