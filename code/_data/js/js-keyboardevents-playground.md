@@ -12,7 +12,7 @@ tags:
   - "#JavaScript"
   - "keyboard"
   - "events"
-fileName: "js-keyboardevents-playground"
+demoURL: "https://keyevents.netlify.app/"
 code_embed_link: "js-keycodes"
 links: 
   - "JavaScript Keycode List – Keypress Event Key Codes for Enter, Space, Backspace, and More$#$#$#https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes/"

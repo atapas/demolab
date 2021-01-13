@@ -38,6 +38,7 @@ export const query = graphql`
               name
               color
             }
+            demoURL
           }
           fields {
             slug

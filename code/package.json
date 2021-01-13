@@ -42,7 +42,7 @@
     "react-iframe": "^1.8.0",
     "react-json-pretty": "^2.2.0",
     "react-typography": "^0.16.19",
-    "shortid": "^2.2.15",
+    "shortid": "^2.2.16",
     "styled-components": "^5.1.1",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
