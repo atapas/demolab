@@ -19,7 +19,6 @@ export default () => {
                   color
                   desc
                   image
-                  hide
                 }
               }
             }
@@ -42,7 +41,7 @@ export default () => {
       return obj;
     });
     let filtered = ret.filter((elem) => {
-      return (_.isUndefined(elem.hide) || !elem.hide);
+      return !elem.hide;
     });
     setChartData(filtered);
   }, [categoryGroupedData])
