@@ -1,7 +1,8 @@
 import React from "react"
 import Iframe from 'react-iframe'
 import { generate } from "shortid"
-import styled from "styled-components";
+import styled from "styled-components"
+import { ArrowUpRight } from 'react-feather'
 
 
 const StyledAnchorBtn = styled.a`
@@ -12,7 +13,6 @@ const StyledAnchorBtn = styled.a`
   font-size:0.8rem;
   border-radius: .25rem;
   text-decoration: none;
-  text-transform: uppercase;
   cursor: pointer;
 `;
 
@@ -21,7 +21,14 @@ const DemoFromURL = props => {
   const ID = props.id
   return (
     <>
-      <StyledAnchorBtn style={{float:'right', marginBottom: '10px'}} href={ URL } target="_blank" rel="noreferrer">Open in another Tab</StyledAnchorBtn>
+      <StyledAnchorBtn
+        style={{float:'right', marginBottom: '10px'}} 
+        href={ URL } 
+        target="_blank" 
+        rel="noreferrer">
+        <ArrowUpRight size={16} /> 
+        Open Demo in a New Tab
+      </StyledAnchorBtn>
       <Iframe
         url={URL}
         width="100%"
