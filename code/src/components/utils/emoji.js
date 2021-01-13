@@ -20,7 +20,8 @@ const emojis = {
   "bluetooth": '🤙',
   "input-symbols": '🔣',
   "postbox": '📮',
-  "princess": '👸'
+  "princess": '👸',
+  "cat": '🐈'
 }
 
 const Emoji = props => (
