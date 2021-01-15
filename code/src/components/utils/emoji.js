@@ -22,7 +22,9 @@ const emojis = {
   "postbox": '📮',
   "princess": '👸',
   "cat": '🐈',
-  "check": '✔️'
+  "check": '✔️',
+  'green-book': '📗',
+  'laptop': '💻'
 }
 
 const Emoji = props => (
@@ -32,7 +34,7 @@ const Emoji = props => (
       aria-label={props.label ? props.label : ""}
       aria-hidden={props.label ? "false" : "true"}
     >
-      {emojis[props.symbol]}
+      {emojis[props.symbol]} {props.text && (<span>{props.text}</span>)}
     </span>
 );
 

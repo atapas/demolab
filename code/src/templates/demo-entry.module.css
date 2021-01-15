@@ -2,3 +2,7 @@
     margin-top: 50px;
     padding-top: 13px;
 }
+
+.learnings {
+    list-style: square;
+}

@@ -15,6 +15,7 @@ tags:
   - "#video"
 fileName: "image-capture"
 links: 
+  - "10 lesser-known Web APIs you may want to use $#$#$#https://blog.greenroots.info/10-lesser-known-web-apis-you-may-want-to-use-ckejv75cr012y70s158n85yhn"
   - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
 ---
 The MediaStream Image Capture API is an API for capturing images or videos from a photographic device. 

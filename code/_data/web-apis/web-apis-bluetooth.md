@@ -11,7 +11,8 @@ tags:
   - "#bluetooth"
   - "#network"
 fileName: "bluetooth-api"
-links: 
+links:
+  - "10 lesser-known Web APIs you may want to use $#$#$#https://blog.greenroots.info/10-lesser-known-web-apis-you-may-want-to-use-ckejv75cr012y70s158n85yhn"
   - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth"
 ---
 The Bluetooth interface of the Web Bluetooth API returns a Promise to a BluetoothDevice object with the specified options.
