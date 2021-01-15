@@ -16,6 +16,8 @@ import Tab from 'react-bootstrap/Tab';
 import StyledButton from '../components/styled/styled-button';
 import DemoFromURL from '../components/utils/DemoFromURL';
 
+import Emoji from '../components/utils/emoji';
+
 export default function APIDemo({ data }) {
   console.log(data)
   const links = data.markdownRemark.frontmatter.links;
@@ -118,7 +120,9 @@ export default function APIDemo({ data }) {
       >
         {
           showDemoTab &&
-          <Tab eventKey="demo" title="Demo" style={{ padding: "10px" }}>
+          <Tab eventKey="demo" 
+            title={<Emoji label="Laptop" symbol="laptop" text="See Demo" />}  
+            style={{ padding: "10px" }}>
             <div>
               {hasDemoFile && demo.length > 0 &&
                 demo.map((Component, index) => <Component key={index} />)
@@ -132,7 +136,10 @@ export default function APIDemo({ data }) {
         }
         { 
           !shouldHideCodeTab && 
-          <Tab eventKey="scode" title="Source Code" style={{ padding: "10px" }}>
+          <Tab
+            eventKey="scode" 
+            title={<Emoji label="Input Symbols" symbol="input-symbols" text="Source Code" />}
+            style={{ padding: "10px" }}>
             <div className="column">
               {
                 showCodeBtn && 
@@ -145,13 +152,15 @@ export default function APIDemo({ data }) {
             </div>
           </Tab>
         }
-        <Tab eventKey="read" title="Important Links" style={{ padding: "10px" }}>
+        <Tab eventKey="read" 
+            title={<Emoji label="Green Book" symbol="green-book" text="Learn about it!" />} 
+            style={{ padding: "10px" }}>
           {links && links.length > 0 && (
             <div>
-              More reads from:
+              Learn about it from:
               <ul>
                 {links.map((link, index) => (
-                  <li key={shortid.generate()}>
+                  <li className={demoEntryStyles.learnings} key={shortid.generate()}>
                     <a
                       href={getLinkPart(link, "base")}
                       target="_blank"

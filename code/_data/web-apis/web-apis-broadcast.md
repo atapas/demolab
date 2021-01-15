@@ -11,7 +11,8 @@ tags:
   - "#broadcast"
   - "#message"
 fileName: "broadcast-api"
-links: 
+links:
+  - "10 lesser-known Web APIs you may want to use $#$#$#https://blog.greenroots.info/10-lesser-known-web-apis-you-may-want-to-use-ckejv75cr012y70s158n85yhn"
   - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
 ---
 The Broadcast Channel API allows basic communication between browsing contexts (that is, windows, tabs, frames, or iframes) and workers on the same origin.

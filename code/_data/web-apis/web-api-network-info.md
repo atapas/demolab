@@ -10,7 +10,8 @@ category:
 tags:
   - "#netoworking"
 fileName: "networkinfo-api"
-links: 
+links:
+  - "10 lesser-known Web APIs you may want to use $#$#$#https://blog.greenroots.info/10-lesser-known-web-apis-you-may-want-to-use-ckejv75cr012y70s158n85yhn"
   - "MDN$#$#$#https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API"
 ---
 The `Network Information API` provides information about the system's connection in terms of general connection type (e.g., 'wifi', 'cellular', etc.). This can be used to select high definition content or low definition content based on the user's connection. 
