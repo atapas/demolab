@@ -21,7 +21,8 @@ const emojis = {
   "input-symbols": '🔣',
   "postbox": '📮',
   "princess": '👸',
-  "cat": '🐈'
+  "cat": '🐈',
+  "check": '✔️'
 }
 
 const Emoji = props => (
