@@ -24,7 +24,8 @@ const emojis = {
   "cat": '🐈',
   "check": '✔️',
   'green-book': '📗',
-  'laptop': '💻'
+  'laptop': '💻',
+  'credit-card': '💳'
 }
 
 const Emoji = props => (
